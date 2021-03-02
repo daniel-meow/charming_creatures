@@ -1,0 +1,62 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  padding: 2em 0;
+  background-color: $clr-primary;
+
+  h6 {
+    color: $dark-gray;
+  }
+
+  .navbar-links {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.footer-box {
+  margin: 1em 3em;
+
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.link-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.link-box {
+  border: 1px solid white;
+  height: 55%;
+  width: 200px;
+  margin: 0 1em;
+  position: relative;
+
+  h6 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0.5em;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.3em;
+  }
+}
+
