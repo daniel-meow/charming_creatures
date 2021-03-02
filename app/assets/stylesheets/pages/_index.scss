@@ -1,5 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "donation/donation-show";
+
 
 .card-index {
   border-radius:  8px;
@@ -12,3 +14,4 @@
   display: grid;
   justify-content: space-around;
 }
+
