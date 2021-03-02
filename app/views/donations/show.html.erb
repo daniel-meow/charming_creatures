@@ -1,2 +1,38 @@
-<h1>Donations#show</h1>
-<p>Find me in app/views/donations/show.html.erb</p>
+<div class="banner-image">
+</div>
+<div class="container content-main">
+  <div class="container donation-content">
+    <div class="donation-text">
+      <h2><strong>Thank You <%=@donation.user.email%>!</strong></h2>
+      <p>On behalf of <strong><%=@donation.club.name%></strong> we would like to thank you for your support of <strong><%=humanized_money_with_symbol(@donation.amount)%></strong>.<br>We are looking forward to keep you well informed about the latest news from <strong><%=@donation.club.name%></strong> and send our best wishes to you and your family.
+      <br>
+      <br>best regards<br>
+      <br>
+      Your team from Charming Creatures</p>
+    </div>
+    <div class="card-certificate">
+      <div class="donation-summary card">
+        <div class="card-top">
+        <div class="text">
+          <h5 class="header"><strong>Summary</strong></h5>
+          <p><%=@donation.user.email%><br>has donated:</p>
+        </div>
+            <img src="https://source.unsplash.com/80x80/?nature,dog" alt="animal">
+        </div>
+        <div class="card-bottom">
+          <h4><strong><%=humanized_money_with_symbol(@donation.amount)%> <i class="fab fa-paypal"></i></strong></i></h4>
+        </div>
+        <div class="certificate-button-box">
+          <a href="#" class="btn btn-primary certificate-button">certificate</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container donation-pictures-bottom">
+    <img src="https://source.unsplash.com/1600x900/?nature,dog" alt="animal">
+    <img src="https://source.unsplash.com/1600x900/?nature,cat" alt="animal">
+    <img src="https://source.unsplash.com/1600x900/?nature,horse" alt="animal">
+    <img src="https://source.unsplash.com/1600x900/?nature,animal" alt="animal">
+  </div>
+</div>
