@@ -10,10 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_153004) do
+ActiveRecord::Schema.define(version: 2021_03_02_104311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "club_species", force: :cascade do |t|
+    t.bigint "club_id", null: false
+    t.bigint "species_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["club_id"], name: "index_club_species_on_club_id"
+    t.index ["species_id"], name: "index_club_species_on_species_id"
+  end
+
+  create_table "clubs", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "address"
+    t.string "category"
+    t.string "instagram_link"
+    t.string "facebook_link"
+    t.string "website_link"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_clubs_on_user_id"
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.float "amount"
+    t.bigint "user_id", null: false
+    t.bigint "club_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["club_id"], name: "index_donations_on_club_id"
+    t.index ["user_id"], name: "index_donations_on_user_id"
+  end
+
+  create_table "species", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +62,15 @@ ActiveRecord::Schema.define(version: 2021_03_01_153004) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "address"
+    t.float "goal"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "club_species", "clubs"
+  add_foreign_key "club_species", "species"
+  add_foreign_key "clubs", "users"
+  add_foreign_key "donations", "clubs"
+  add_foreign_key "donations", "users"
 end
