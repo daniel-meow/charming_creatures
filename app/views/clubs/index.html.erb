@@ -1,2 +1,29 @@
-<h1>Clubs#index</h1>
-<p>Find me in app/views/clubs/index.html.erb</p>
+<div class="container">
+  <div class="banner">
+    <h1><%= @headline %></h1>
+    <%= form_tag clubs_path, method: :get, class: "searchbar" do %>
+    <div class="input-group">
+      <%= text_field_tag :query, params[:query], placeholder: "Search", class: "form-control" %>
+      <div class="input-group-btn">
+        <%= button_tag "", :class => 'btn btn-info',:name => nil%>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  <div class="filters">
+    <p>Placer Holder Filter1 Filter2 Filter3</p>
+  </div>
+</div>
+<div class="container">
+  <div class='card-container'>
+    <% @clubs.each do |club|  %>
+      <div class="card-index">
+        <div class="image"><%= "Placeholder picture" %></div>
+        <div class="logo"> <%= "Placeholder Logo" + club.name %></div>
+        <div class="location"><%= "Placeholder Location" %></div>
+        <div class="bookmark"><%= "Placeholder Boomark" %></div>
+        <div class="description"><%= club.description %></div>
+      </div>
+    <% end %>
+  </div>
+</div>

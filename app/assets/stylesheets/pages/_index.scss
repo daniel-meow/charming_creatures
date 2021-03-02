@@ -1,2 +1,14 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.card-index {
+  border-radius:  8px;
+  border-color: black;
+  padding-bottom: 20px;
+  border-style: none solid solid none;
+}
+
+.card-container {
+  display: grid;
+  justify-content: space-around;
+}
