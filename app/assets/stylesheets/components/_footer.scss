@@ -1,0 +1,32 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  height: 200px;
+  background-color: $clr-primary;
+
+  h5 {
+    color: $dark-gray;
+  }
+
+  .navbar-links {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.footer-box {
+  margin: 1em 3em;
+
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
