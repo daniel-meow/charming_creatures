@@ -23,9 +23,23 @@
     <div class="col-sm-12 col-lg-6 d-flex justify-content-end">
       <div class="donation-club-box d-flex flex-column justify-content-between">
         <h2>Support us now!</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, id. Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum iusto quae sapiente pariatur, molestiae soluta hic distinctio amet quibusdam tenetur! Quam, saepe magni commodi hic, placeat quasi ipsam molestiae iste debitis necessitatibus iure praesentium blanditiis, aspernatur nisi numquam quos maiores.</p>
+        <p> <%= @short  %></p>
         <button class="btn btn-large btn-block btn-primary" type="button">DONATE NOW</button>
       </div>
+    </div>
+  </div> 
+  <div id="club-about">
+    <h2>About</h2>
+    <p><%= @club[0].description * 10 %></p>
+  </div>
+  <div id="club-images">
+    <div class="club-image">
+    </div>
+        <div class="club-image">
+    </div>
+        <div class="club-image">
+    </div>
+        <div class="club-image">
     </div>
   </div> 
 </div>

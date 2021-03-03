@@ -2,6 +2,7 @@ class ClubsController < ApplicationController
   skip_before_action :authenticate_user!
   def show
     @club = Club.where(id: params[:id])
+    @short = @club[0].description.truncate(250);
   end
 
   def index

@@ -28,6 +28,7 @@
   border-radius: .5em;
   padding: 1em;
   margin-right: 1em;
+  margin-top: 1em;
   transition: border-radius 1s;
 
   &:hover {
@@ -35,3 +36,25 @@
   }
 }
 
+#club-about {
+  margin-top: 2em;
+  p {
+    line-height: 2;
+  }
+}
+
+#club-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+  margin-bottom: 2em;
+
+}
+
+.club-image {
+  height: 400px;
+  background-color: red;
+  background-image: asset-url("kitten-placeholder.png");
+  background-size:cover;
+  background-position: center;
+}
