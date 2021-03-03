@@ -44,5 +44,16 @@
   </div> 
   <div id="club-updates">
     <h2>Latest Updates</h2>
+    <% @updates.each do |update| %>
+      <div class="update-box">
+        <div class="update-img"></div>
+        <div class="update-content">
+          <h3><%= update.title  %></h3>
+          <p>posted by: <%= update.club.name  %> on <%= update.created_at  %></p>
+          <p><%= update.description  %></p>
+          <button class="btn btn-large btn-primary" type="button">Read more</button>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
