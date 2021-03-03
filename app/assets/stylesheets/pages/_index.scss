@@ -22,20 +22,21 @@
 
 .card-index {
   border-radius:  8px;
-  box-shadow: 2.5px 2.5px 2.5px 2.5px #363062;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  // box-shadow: 2.5px 2.5px 2.5px 2.5px #363062;
   padding-bottom: 20px;
-  flex-grow: 1;
   margin: 10px 10px 10px 10px;
   position: relative;
-  white-space: normal !important;
+  white-space: normal;
   font-size: 14px;
   line-height: 1.43;
   -webkit-font-smoothing: antialiased;
   height: 95%;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  max-width: 500px;
 
   .card-index-inside {
     padding: 5px 5px 5px 10px;
-    flex-grow: 1;
     align-items: center;
   }
 
@@ -59,7 +60,8 @@
       bottom: 10px;
       right: 10px;
       flex-grow: 1;
-      box-shadow: 2.5px 2.5px #363062;
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+      // box-shadow: 2.5px 2.5px #363062;
       align-items: flex-end;
       z-index: 2;
     }
@@ -67,28 +69,47 @@
 
   .name {
     font-weight: bold;
-    font-size: 25px;
+    font-size: 30px;
+    position: relative;
   }
 
   .l-n-b{
+  text-wrap: break-word;
   position: relative;
   height: 30px;
+
   flex-grow: 1;
+
     .location {
       position: absolute;
       bottom: 10px;
     }
+
     .bookmark {
       position: absolute;
       bottom: 10px;
       right: 10px;
     }
-
   }
-
-  .description {
-  min-height: 80px;
-  }
+  // .d2 {
+  //   display: none;
+  // }
 }
 
+.card-index:hover {
+  box-shadow: 0 25px 50px rgba(0,0,0,0.30), 0 20px 16px rgba(0,0,0,0.22);
+  // transform: scale(1.02);
+  margin-top: -1px;
+  transition: all 0.5s;
+  cursor: pointer;
+  // .d1 {
+  //   display: none;
+  // }
+  // .d2 {
+  //   // transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+  //   display: block;
+  //   height: auto;
+  // }
+}
 // Clubcards with containner padding End //
+

@@ -11,24 +11,26 @@
   <% end %>
   </div>
   <div class="filters">
-    <p>Placer HELLLO Holder Filter1 Filter2 Filter3</p>
+    <p>Placer Holder  Filter1 Filter2 Filter3</p>
   </div>
 </div>
 <!-- Clubcards with containner padding Start -->
 <div class="container-main">
   <div class='container-card'>
     <% @clubs.each do |club|  %>
-      <div class="card-index">
-        <div class="card-index-inside">
-          <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
-          <div class="name"> <%= club.name %></div>
-          <div class="l-n-b">
-            <div class="location"><%= "Placeholder Location" %></div>
-            <div class="bookmark"><%= "Placeholder Boomark" %></div>
+      <%= link_to club_path(club) do %>
+        <div class="card-index">
+          <div class="card-index-inside">
+            <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
+            <div class="name"> <%= club.name %></div>
+            <div class="l-n-b">
+              <div class="location"><%= "Placeholder Location" %></div>
+              <div class="bookmark"><%= "Placeholder Boomark" %></div>
+            </div>
+            <div class="d1"> <%= truncate(club.description, length: 250) %></div>
           </div>
-          <div ><%= truncate(club.description, length: 250) %></div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
