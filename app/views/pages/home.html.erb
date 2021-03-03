@@ -4,5 +4,19 @@
     <h3>Super catchy phrase</h3>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab.</p>
     <br>
+    <div class="container h-100">
+      <div class="d-flex justify-content-center h-100">
+        <div class="sb">
+          <%= form_tag clubs_path, method: :get, class: "search_input" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              placeholder: "Find your club" %>
+            <%= button_tag(type: "submit") do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
