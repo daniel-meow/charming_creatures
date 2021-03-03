@@ -5,13 +5,7 @@
       <div class="donation-box">
         <div class="donation-box-content">
           <%= simple_form_for [@club, @donation] do |f| %>
-            <%= f.input :amount, class: "form-control" %>
-            <div class="full-name">
-              <%= f.input :amount, label: "first name", class: "first_name" %>
-              <%= f.input :amount, label: "last name", class: "last_name" %>
-            </div>
-            <%= f.input :amount, label: "email" %>
-            <%= f.input :amount, label: "address" %>
+            <%= f.input :amount, as: :integer, label: "Amount in Euro", class: "form-control" %>
             <%= f.button :submit, "Donate now",  class: 'btn btn-primary' %>
           <% end %>
         </div>
