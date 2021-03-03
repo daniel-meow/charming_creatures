@@ -59,4 +59,13 @@ clubs.each do |club|
 end
 
 puts "Club Species created"
+
+puts "Creating Articles..."
+clubs.each do |club|
+  rand(1..3).times do
+    Article.create(title: "Test Title", description: "Description Text Description Text Description Text Description Text Description Text Description Text", club_id: club.id)
+  end
+end
+puts "Articles created!"
+
 puts "Seeds complete!"
