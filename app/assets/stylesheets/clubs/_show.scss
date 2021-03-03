@@ -58,3 +58,28 @@
   background-size:cover;
   background-position: center;
 }
+
+.update-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid $dark-gray;
+  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 1em;
+  padding: 2em;
+  margin: 1em 0em;
+}
+
+.update-img {
+  height: 200px;
+  min-width: 200px;
+  width: 200px;
+  flex-grow: 1;
+  background-image: asset-url("kitten-placeholder.png");
+  background-size:cover;
+  background-position: center;
+
+}
+
+.update-content {
+  padding-left: 1em;
+}

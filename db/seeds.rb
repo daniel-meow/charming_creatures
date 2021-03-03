@@ -63,8 +63,8 @@ puts "Club Species created"
 
 puts "Creating Articles..."
 clubs.each do |club|
-  rand(1..3).times do
-    Article.create(title: "Test Title", description: "Description Text Description Text Description Text Description Text Description Text Description Text", club_id: club.id)
+  rand(2..4).times do
+    Article.create(title: "Nine reasons to fight for a global wildlife trade ban", description: "We’re calling for an end to the cruel global wildlife trade – to prevent animal suffering, protect our planet and help prevent further zoonotic disease outbreaks like COVID-19. But we can’t do it without you", club_id: club.id)
   end
 end
 puts "Articles created!"
