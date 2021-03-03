@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
   resources :donations, only: [ :show ]
   resources :species, only: [ :show ]
+  resources :articles, only: [:index, :show]
 end
