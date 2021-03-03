@@ -6,3 +6,32 @@
   background-size:cover;
   background-position: center;
 }
+
+.sm-icon {
+  font-size: 36px;
+
+  &.ig {
+    color: #D6228D;
+  }
+  &.fb {
+    color: #4064AC;
+  }
+  &.tw {
+    color: #1D9CEA;
+  }
+
+}
+
+.sm-box {
+  display: inline-flex;
+  border: 1px solid $clr-primary;
+  border-radius: .5em;
+  padding: 1em;
+  margin-right: 1em;
+  transition: border-radius 1s;
+
+  &:hover {
+    border-radius: 1em;
+  }
+}
+
