@@ -4,40 +4,43 @@
   <div class="navbar-links">
     <div class="footer-box logo-footer navbar-lewagon">
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <%= image_tag "logo.png" %>
       <% end %>
   </div>
     <div class="footer-box dev">
       <h6>Developers</h6>
-      <ul>
-        <li>Name 1</li>
-        <li>Name 2</li>
-        <li>Name 3</li>
-        <li>Name 4</li>
+      <ul id="footer-devs">
+        <li><a href="https://github.com/Botlike31">Andreas Broska</a></li>
+        <li><a href="https://github.com/ichboop">Leonard Diemer</a></li>
+        <li><a href="https://github.com/Mhd-Adel">Mhd.adel Al Masri</a></li>
+        <li><a href="https://github.com/daniel-meow">Daniel Thiel</a></li>
       </ul>  
     </div>
     <div class="footer-box company">
       <h6>Company</h6>
-      <ul>Link 1</ul>
-      <ul>Link 2</ul>
-      <ul>Link 3</ul>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Imprint</a></li>
+      </ul>
     </div>
     <div class="footer-box social">
-      <h6>Social</h6>
-      <ul>Link 1</ul>
-      <ul>Link 2</ul>
-      <ul>Link 3</ul>
+      <h6>Follow us</h6>
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook-square"></i> Facebook</a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="#"><i class="fab fa-twitter-square"></i> Twitter</a></li>
+      </ul>
     </div>
   </div>
   
   <div class="link-boxes">
-    <div class="link-box">
-      <h6>Contact Us</h6>
+    <a href="www.lewagon.com" class="link-box">
+      <h6>Learn more</h6>
       <%= image_tag "arrow_up_right.png" %>
-    </div>
-    <div class="link-box">
-      <h6>Contact Us</h6>
+    </a>
+    <a href="#" class="link-box">
+      <h6>Contact us</h6>
       <%= image_tag "arrow_up_right.png" %>
-    </div> 
+    </a> 
   </div>
 </div>

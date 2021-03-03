@@ -1,2 +1,45 @@
-<h1>Clubs#show</h1>
-<p>Find me in app/views/clubs/show.html.erb</p>
+<div class="club-header-image">
+  <div class="container">
+    <div class="d-flex align-items-end avatar-container">
+      <div class="club-avatar"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-lg-6">
+     <h1 class="clubavatar-margin-top"><%= @club[0].name  %></h1>
+     <div class="sm-box">
+      <i class="fab fa-instagram sm-icon ig"></i>
+    </div>
+    <div class="sm-box">
+     <i class="fab fa-facebook-square sm-icon fb"></i>
+    </div>
+    <div class="sm-box">
+     <i class="fab fa-twitter-square sm-icon tw"></i>
+    </div>
+    </div>
+    <div class="col-sm-12 col-lg-6 d-flex justify-content-end">
+      <div class="donation-club-box d-flex flex-column justify-content-between">
+        <h2>Support us now!</h2>
+        <p> <%= @short  %></p>
+        <button class="btn btn-large btn-block btn-primary" type="button">DONATE NOW</button>
+      </div>
+    </div>
+  </div> 
+  <div id="club-about">
+    <h2>About</h2>
+    <p><%= @club[0].description * 10 %></p>
+  </div>
+  <div id="club-images">
+    <div class="club-image">
+    </div>
+        <div class="club-image">
+    </div>
+        <div class="club-image">
+    </div>
+        <div class="club-image">
+    </div>
+  </div> 
+</div>
