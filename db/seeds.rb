@@ -10,6 +10,7 @@ puts "Destorying the database..."
 ClubSpecy.destroy_all
 Species.destroy_all
 Donation.destroy_all
+Article.destroy_all
 Club.destroy_all
 User.destroy_all
 puts "Database destroyed!"
