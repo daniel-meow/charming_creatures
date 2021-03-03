@@ -3,7 +3,8 @@ class ClubsController < ApplicationController
 
   def show
     find_club
-    @short = @club[0].description.truncate(250);
+    @short = @club.description.truncate(250);
+    @updates = Article.where(id: @club.id);
   end
 
   def index

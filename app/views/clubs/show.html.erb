@@ -9,7 +9,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-lg-6">
-     <h1 class="clubavatar-margin-top"><%= @club[0].name  %></h1>
+     <h1 class="clubavatar-margin-top"><%= @club.name  %></h1>
      <div class="sm-box">
       <i class="fab fa-instagram sm-icon ig"></i>
     </div>
@@ -30,7 +30,7 @@
   </div> 
   <div id="club-about">
     <h2>About</h2>
-    <p><%= @club[0].description * 10 %></p>
+    <p><%= @club.description * 10 %></p>
   </div>
   <div id="club-images">
     <div class="club-image">
@@ -42,4 +42,7 @@
         <div class="club-image">
     </div>
   </div> 
+  <div id="club-updates">
+    <h2>Latest Updates</h2>
+  </div>
 </div>

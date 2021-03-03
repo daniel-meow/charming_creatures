@@ -10,20 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_105608) do
-
+ActiveRecord::Schema.define(version: 2021_03_03_133251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.bigint "club_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["club_id"], name: "index_articles_on_club_id"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -44,6 +34,15 @@ ActiveRecord::Schema.define(version: 2021_03_03_105608) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "club_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["club_id"], name: "index_articles_on_club_id"
   end
 
   create_table "club_species", force: :cascade do |t|
@@ -101,9 +100,8 @@ ActiveRecord::Schema.define(version: 2021_03_03_105608) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-
-  add_foreign_key "articles", "clubs"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "articles", "clubs"
   add_foreign_key "club_species", "clubs"
   add_foreign_key "club_species", "species"
   add_foreign_key "clubs", "users"
