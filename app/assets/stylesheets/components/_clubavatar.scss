@@ -1,0 +1,22 @@
+.avatar-container {
+  height: 50vh;
+}
+
+.club-avatar {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  border: 1px solid $clr-primary;
+  top: 0;
+  right: 0;
+  margin-bottom: -50px;
+  background-image: asset-url("logo-placeholder.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.clubavatar-margin-top {
+  margin-top: 60px;
+}
