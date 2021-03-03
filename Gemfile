@@ -69,3 +69,6 @@ gem 'money-rails'
 
 # Dot ENV
 gem 'dotenv-rails', groups: [:development, :test]
+
+# Cloudinary
+gem 'cloudinary', '~> 1.16.0'
