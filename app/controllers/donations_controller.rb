@@ -12,9 +12,10 @@ class DonationsController < ApplicationController
   def create
     @club = Club.find(params[:club_id])
     @donation = Donation.new(donation_params)
+    @donation.user = current_user
     @donation.club = @club
     if @donation.save
-      redirect_to club_path(@club)
+      redirect_to donation_path(@donation)
     else
       render 'new'
     end
