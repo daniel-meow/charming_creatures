@@ -4,15 +4,92 @@
 @import "donation/donation-show";
 
 
+.container-main {
+  padding-left: 24px;
+  padding-right: 24px;
+  max-width: none;
+}
+
+.container-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: space-between;
+  position: center;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
 .card-index {
   border-radius:  8px;
-  border-color: black;
+  box-shadow: 2.5px 2.5px 2.5px 2.5px #363062;
   padding-bottom: 20px;
-  border-style: none solid solid none;
+  flex-grow: 1;
+  margin: 10px 10px 10px 10px;
+  position: relative;
+  white-space: normal !important;
+  font-size: 14px;
+  line-height: 1.43;
+  -webkit-font-smoothing: antialiased;
+  height: 95%;
+
+  .card-index-inside {
+    padding: 5px 5px 5px 10px;
+    flex-grow: 1;
+    align-items: center;
+  }
+
+  .p-n-l {
+    position: relative;
+    height: 250px;
+    border-radius: 3%;
+    overflow: hidden;
+
+    .image {
+      height: 250px;
+      min-width: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .logo {
+      height: 50px;
+      width: 70px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      flex-grow: 1;
+      box-shadow: 2.5px 2.5px #363062;
+      align-items: flex-end;
+      z-index: 2;
+    }
+  }
+
+  .name {
+    font-weight: bold;
+    font-size: 25px;
+  }
+
+  .l-n-b{
+  position: relative;
+  height: 30px;
+  flex-grow: 1;
+    .location {
+      position: absolute;
+      bottom: 10px;
+    }
+    .bookmark {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+
+  }
+
+  .description {
+  min-height: 80px;
+  }
 }
 
-.card-container {
-  display: grid;
-  justify-content: space-around;
-}
+.description {
 
+}
