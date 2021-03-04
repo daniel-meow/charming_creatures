@@ -33,9 +33,10 @@
       <div class="donation-club-box d-flex flex-column justify-content-between">
         <h2>Support us now!</h2>
         <p> <%= @short  %></p>
+        
         <!-- New Button Class and style Start // Leo -->
-        <div class="button-donate">
-          <button class="button" type="button">DONATE NOW</button>
+        <div class="button-donate">        
+          <%= link_to "Donate Now", new_club_donation_path(@club), class:"button-center" %> 
         </div>
         <!-- New Button Class and style End -->
       </div>
