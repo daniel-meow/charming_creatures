@@ -11,8 +11,8 @@ class ClubsController < ApplicationController
     @clubs = Club.all
     @headline = "Super Catchy Phrase"
     if params[:query].present?
-      sql_query = "name @@ :query OR category @@ :query OR address @@ :query"
-      @clubs = Club.where(sql_query, query: "%#{params[:query]}%")
+      sql_query = "clubs.name @@ :query OR clubs.category @@ :query OR clubs.address @@ :query OR species.name @@ :query"
+      @clubs = Club.joins(club_species: [:species]).where(sql_query, query: "%#{params[:query]}%")
       @headline = "The following results fit your search for: #{params[:query]}!"
     else
       @clubs = Club.all
