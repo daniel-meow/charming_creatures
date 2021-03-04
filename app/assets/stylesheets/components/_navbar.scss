@@ -1,6 +1,28 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: $clr-primary;
+  background: white;
+  height: 80px;
+
+  a {
+    color: black!important;
+    font-size: 21px;
+    font-weight: 500;
+    margin: 0 0.3em;  
+  }
+
+  a:hover {
+    color: #eb6383!important;
+  }
+}
+
+.navbar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    font-size: 16px;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,6 +30,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
+  
   width: 40px;
 }
 
@@ -16,6 +39,7 @@
 }
 
 .fas.fa-paw {
+  margin-left: 1em;
   color: white;
   font-size: 35px;
   cursor: pointer;
