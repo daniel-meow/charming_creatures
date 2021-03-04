@@ -9,4 +9,34 @@
   border-radius: 5%;
   box-shadow: 1px 4px 15px -4px rgba(0,0,0,0.3);
   text-align: center;
+
+  h1 {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+}
+
+.form-group.file.optional.club_photos {
+  padding-top: 6px;
+  padding-left: 14px;
+  display: flex;
+  align-items: center;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+#club_photos.form-control-file.file.optional {
+  margin-left: 40px;
+  margin-bottom: 6px;
+}
+
+#club_description, 
+#club_name,
+#club_address,
+#club_category {
+  border-radius: 10px;
 }
