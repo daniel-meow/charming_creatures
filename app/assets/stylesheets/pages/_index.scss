@@ -2,6 +2,11 @@
 @import "home";
 @import "articles";
 @import "donation/donation-show";
+@import "show";
+
+.flex-grow-1 {
+  background: white;
+}
 
 // Searchbar aNd Button
 .s-n-b {

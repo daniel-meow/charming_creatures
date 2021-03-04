@@ -33,10 +33,14 @@
       <div class="donation-club-box d-flex flex-column justify-content-between">
         <h2>Support us now!</h2>
         <p> <%= @short  %></p>
-        <button class="btn btn-large btn-block btn-primary" type="button">DONATE NOW</button>
+        <!-- New Button Class and style Start // Leo -->
+        <div class="button-donate">
+          <button class="button" type="button">DONATE NOW</button>
+        </div>
+        <!-- New Button Class and style End -->
       </div>
     </div>
-  </div> 
+  </div>
   <div id="club-about">
     <h2>About</h2>
     <p><%= @club.description * 10 %></p>
@@ -47,7 +51,7 @@
         <%= cl_image_tag photo.key %>
       </div>
     <% end %>
-  </div> 
+  </div>
   <div id="club-updates">
     <h2>Latest Updates</h2>
     <% @updates.each do |update| %>
@@ -57,7 +61,9 @@
           <h3><%= update.title  %></h3>
           <p>posted by: <%= update.club.name  %> on <%= update.created_at  %></p>
           <p><%= update.description  %></p>
-          <button class="btn btn-large btn-primary" type="button">Read more</button>
+          <!-- New Button Class and style Start // Leo -->
+          <button class="button" type="button">Read more</button>
+          <!-- New Button Class and style End // Leo -->
         </div>
       </div>
     <% end %>
