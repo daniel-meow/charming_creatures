@@ -1,1 +1,101 @@
 // Specific CSS for your home-page
+
+#home-header {
+  height: 90vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+
+  h1 {
+    font-weight: 900;
+    line-height: 1.7;
+  }
+
+  p {
+    margin-top: 50px;
+    line-height: 2;
+    font-weight: 600;
+  }
+}
+
+.clr-main {
+  color: #eb6383;
+  padding-bottom: 2px;
+  border-bottom: 5px solid #eb6383;
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+  width: 85vw;
+  height: 90vh;
+  margin: auto;
+}
+
+.home-header-content {
+  width: 40%;
+}
+
+.home-header-image {
+  width: 60%;
+  height: 80vh;
+  background-image: asset-url("home-animal.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.home-mt {
+  margin-top: 50px;
+}
+
+#home-mission {
+  background-color: white;
+}
+
+.mission-container {
+  background-color: white;
+}
+
+.mission-headline {
+  text-align: center;
+  h2 {
+    font-weight: 900;
+  }
+}
+
+.missions {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+}
+
+.mission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  margin: 0 3em;
+
+  img {
+    width: 200px;
+  }
+
+  h3 {
+    margin-top: 0.5em;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+#home-look {
+  padding-top: 4em;
+  height: 50vh;
+  background-color: white;
+  text-align: center;
+    h2 {
+    font-weight: 900;
+  }
+}

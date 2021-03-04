@@ -1,3 +1,58 @@
+<div id="home-header">
+  <div class="home-container">
+      <div class="home-header-content">
+        <h1>Support animal welfare organizations all over the world with your donation! </h1>
+        <p><span class="clr-main">Charming Creatures</span> is the #1 online platform for finding small to medium sized animal welfare organizations worldwide that need your help </p>
+         <div class="sb home-mt">
+          <%= form_tag clubs_path, method: :get, class: "search_input" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              placeholder: "Find your club" %>
+            <%= button_tag(type: "submit") do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="home-header-image">
+        
+      </div>
+  </div>
+</div>
+<div id="home-mission">
+  <div class="mission-container">
+    <div class="mission-headline">
+      <h2>Our Mission</h2>
+    </div>
+    <div class="missions">
+      <div class="mission">
+       <%= image_tag("home-donate.png") %>
+       <h3>Donate</h3>
+       <p>Donate money for food, medical bills, transportations and other expenditures, so that animals can have a better life</p> 
+      </div>
+      <div class="mission">
+       <%= image_tag("home-discover.png") %>
+       <h3>Discover</h3>
+       <p>Discover small to medium sized animal welfare organizations from all over the world to find your perfect match</p> 
+      </div>
+      <div class="mission">
+       <%= image_tag("home-save.png") %>
+       <h3>Save</h3>
+       <p>Save the world by supporting animals! More than 83,000 animal species are threatened with extinction as of today</p> 
+      </div>
+    </div>
+  </div>
+</div>
+<div id="home-look">
+  <h2>Some heroes</h2>
+</div>
+<div id="home-look">
+  <h2>Awesome achievements</h2>
+</div>
+
+
+
+<% if false %>
 <div class="overlay-container">
   <div class="overlay">
     <h1>Charming Creatures</h1>
@@ -20,3 +75,5 @@
     </div>
   </div>
 </div>
+
+<% end %>
