@@ -29,11 +29,15 @@
       <div class="card-index">
         <div class="card-index-inside">
           <%= link_to club_path(club) do %>
-            <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
+            <% if club.photos.first %>
+              <div class="p-n-l"><%= cl_image_tag(club.photos.first.key, :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
+            <% else %>
+              <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
+            <% end %> 
             <div class="name"> <%= club.name %></div>
             <div class="l-n-b">
-              <div class="location"><%= "Placeholder Location" %></div>
-              <div class="bookmark"><%= "Placeholder Boomark" %></div>
+              <div class="location"><i class="fas fa-map-marker-alt"></i> <%= club.address %></div>
+              <div class="bookmark"><strong><%= club.category %></strong></div>
             </div>
             <div class="d1"> <%= truncate(club.description, length: 250) %></div>
           <% end %>
