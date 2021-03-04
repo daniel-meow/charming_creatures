@@ -37,8 +37,9 @@
             <div class="name"> <%= club.name %></div>
             <div class="l-n-b">
               <div class="location"><i class="fas fa-map-marker-alt"></i> <%= club.address %></div>
-              <div class="bookmark"><strong><%= club.category %></strong></div>
+              <div class="bookmark"><strong>Bookmarks</strong></div>
             </div>
+              <div class="category"><strong><%= club.category %></strong></div>
             <div class="d1"> <%= truncate(club.description, length: 250) %></div>
           <% end %>
         </div>
