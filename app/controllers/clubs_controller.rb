@@ -40,6 +40,6 @@ class ClubsController < ApplicationController
   end
 
   def club_params
-    params.require(:club).permit(:name, :description, :category, :address, photos: [])
+    params.require(:club).permit(:name, :description, :category, :address, :logo, photos: [])
   end
 end

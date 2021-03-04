@@ -10,7 +10,11 @@
   </div>
   <div class="container main-discription">
     <div class="d-flex align-items-end avatar-container">
-      <div class="club-avatar"></div>
+      <% if @club.logo.attached? %>
+        <%= cl_image_tag @club.logo.key, class: "club-avatar" %>
+      <% else %>
+        <%= image_tag ("Dogpaw.png"), class: "club-avatar" %>
+      <% end %> 
     </div>
   </div>
 </div>
