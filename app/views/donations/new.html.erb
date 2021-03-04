@@ -6,14 +6,13 @@
           <%= f.button :submit, "Donate now",  class: 'button' %>
           <% end %>
         <% else %>
-
-        <%= simple_form_for [@club, @donation] do |f| %>
-          <%= f.input :amount, as: :integer, label: "Amount in Euro" %>
-          <%= f.input :first_name,placeholder: "first name", label: false %>
-          <%= f.input :last_name, placeholder: "last name", label: false %>
-          <%= f.input :email, placeholder: "email", label: false %>
-          <%= f.input :address, placeholder: "address", label: false %>
-          <%= f.button :submit, "Donate now", class: 'button' %>
-        <% end %>
+      <%= simple_form_for [@club, @donation] do |f| %>
+        <%= f.input :amount, as: :integer, label: "Amount in Euro" %>
+        <%= f.input :first_name,placeholder: "first name", label: false %>
+        <%= f.input :last_name, placeholder: "last name", label: false %>
+        <%= f.input :email, placeholder: "email", label: false %>
+        <%= f.input :address, placeholder: "address", label: false %>
+        <%= f.button :submit, "Donate now", class: 'button' %>
+      <% end %>
       <% end %>
 </div>
