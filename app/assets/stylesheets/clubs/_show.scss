@@ -1,10 +1,12 @@
 .club-header-image {
   width: 100vw;
-  height: 50vh;
-  background-image: asset-url("kitten-placeholder.png");
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position: center;
+  height: 50px;
+}
+
+.club-header-image img {
+  height: 320px;
+  object-fit: cover;
+  width: 100vw;
 }
 
 .sm-icon {
@@ -46,15 +48,13 @@
 #club-images {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 1em;
+  grid-gap: 9px;
   margin-bottom: 2em;
 
 }
 
-.club-image {
-  height: 400px;
-  background-color: red;
-  background-image: asset-url("kitten-placeholder.png");
-  background-size:cover;
-  background-position: center;
+.club-image img {
+  height: 270px;
+  width: 270px;
+  object-fit: cover;
 }

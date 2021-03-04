@@ -1,4 +1,11 @@
 <div class="club-header-image">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <% @club.photos.each_with_index do |photo, index| %>
+      <div class="carousel-item <%= index == 0 ? "active" : "" %>">
+        <%= cl_image_tag photo.key %>
+      </div>
+    <% end %>
   <div class="container">
     <div class="d-flex align-items-end avatar-container">
       <div class="club-avatar"></div>
@@ -33,14 +40,11 @@
     <p><%= @club.description * 10 %></p>
   </div>
   <div id="club-images">
-    <div class="club-image">
-    </div>
-        <div class="club-image">
-    </div>
-        <div class="club-image">
-    </div>
-        <div class="club-image">
-    </div>
+    <% @club.photos.each do |photo| %>
+      <div class="club-image">
+        <%= cl_image_tag photo.key %>
+      </div>
+    <% end %>
   </div> 
   <div id="club-updates">
     <h2>Latest Updates</h2>
