@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="home-header-image">
-        
+
       </div>
   </div>
 </div>
@@ -28,23 +28,43 @@
       <div class="mission">
        <%= image_tag("home-donate.png") %>
        <h3>Donate</h3>
-       <p>Donate money for food, medical bills, transportations and other expenditures, so that animals can have a better life</p> 
+       <p>Donate money for food, medical bills, transportations and other expenditures, so that animals can have a better life</p>
       </div>
       <div class="mission">
        <%= image_tag("home-discover.png") %>
        <h3>Discover</h3>
-       <p>Discover small to medium sized animal welfare organizations from all over the world to find your perfect match</p> 
+       <p>Discover small to medium sized animal welfare organizations from all over the world to find your perfect match</p>
       </div>
       <div class="mission">
        <%= image_tag("home-save.png") %>
        <h3>Save</h3>
-       <p>Save the world by supporting animals! More than 83,000 animal species are threatened with extinction as of today</p> 
+       <p>Save the world by supporting animals! More than 83,000 animal species are threatened with extinction as of today</p>
       </div>
     </div>
   </div>
 </div>
 <div id="home-look">
   <h2>Some heroes</h2>
+  <div class="container-main">
+    <div class='container-card'>
+      <% 3.times do |club|  %>
+      <% club = @clubs.sample %>
+        <div class="card-index">
+          <div class="card-index-inside">
+            <%= link_to club_path(club) do %>
+              <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
+              <div class="name"> <%= club.name %></div>
+              <div class="l-n-b">
+                <div class="location"><%= "Placeholder Location" %></div>
+                <div class="bookmark"><%= "Placeholder Boomark" %></div>
+              </div>
+              <div class="d1"> <%= truncate(club.description, length: 250) %></div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 <div id="home-look">
   <h2>Awesome achievements</h2>
