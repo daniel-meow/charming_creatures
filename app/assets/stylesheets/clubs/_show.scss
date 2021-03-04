@@ -1,6 +1,6 @@
 .club-header-image {
   margin: 0;
-  height: 50px;
+  height: min-content;
 
   img {
     height: 320px;
@@ -84,4 +84,8 @@
 
 .update-content {
   padding-left: 1em;
+}
+
+.main-discription {
+  margin-top: -320px;
 }
