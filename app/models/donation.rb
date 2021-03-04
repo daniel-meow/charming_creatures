@@ -13,8 +13,3 @@ class Donation < ApplicationRecord
     end
   end
 end
-
-# change the donation view accessiblity 
-# add colums to donations table
-# add if else statment to the form 
-

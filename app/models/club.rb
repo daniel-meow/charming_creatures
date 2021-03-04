@@ -6,7 +6,5 @@ class Club < ApplicationRecord
   belongs_to :user
 
   validates :name, presence: true, uniqueness: true
-  validates :address, presence: true
-  validates :description, presence: true
-  validates :category, presence: true
+  validates :address, :description, :category, presence: true
 end
