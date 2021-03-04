@@ -4,9 +4,20 @@
         <h1>Donate for <%= @club.name %></h1>
       <div class="donation-box">
         <div class="donation-box-content">
-          <%= simple_form_for [@club, @donation] do |f| %>
-            <%= f.input :amount, as: :integer, label: "Amount in Euro", class: "form-control" %>
-            <%= f.button :submit, "Donate now",  class: 'btn btn-primary' %>
+          <% if user_signed_in? %>
+            <%= simple_form_for [@club, @donation], class: "donation-form" do |f| %>
+              <%= f.input :amount, as: :integer, label: "Amount in Euro", class: "form-control" %>
+              <%= f.button :submit, "Donate now",  class: 'donation-btn' %>
+            <% end %>
+          <% else %>
+            <%= simple_form_for [@club, @donation] do |f| %>
+              <%= f.input :amount, as: :integer, label: "Amount in Euro", class: "form-control" %>
+              <%= f.input :first_name, class: "form-control" %>
+              <%= f.input :last_name, class: "form-control" %>
+              <%= f.input :email, class: "form-control" %>
+              <%= f.input :address, class: "form-control" %>
+              <%= f.button :submit, "Donate now",  class: 'donation-btn' %>
+            <% end %>
           <% end %>
         </div>
       </div>
