@@ -3,6 +3,21 @@
 @import "articles";
 @import "donation/donation-show";
 
+// Searchbar aNd Button
+.s-n-b {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 400px 200px;
+  padding-bottom: 40px;
+
+  .s {
+  }
+  .b {
+    position: relative;
+    left: -25px;
+  }
+}
+
 // Clubcards with containner padding Start //
 
 .container-main {
@@ -40,6 +55,7 @@
     align-items: center;
   }
 
+  // Picture aNd Logo
   .p-n-l {
     position: relative;
     height: 250px;
@@ -73,6 +89,7 @@
     position: relative;
   }
 
+  // Logo aNd Bookmark
   .l-n-b{
   text-wrap: break-word;
   position: relative;
@@ -98,18 +115,10 @@
 
 .card-index:hover {
   box-shadow: 0 25px 50px rgba(0,0,0,0.30), 0 20px 16px rgba(0,0,0,0.22);
-  // transform: scale(1.02);
   margin-top: -1px;
   transition: all 0.5s;
   cursor: pointer;
-  // .d1 {
-  //   display: none;
-  // }
-  // .d2 {
-  //   // transition: all 0.5s cubic-bezier(.25,.8,.25,1);
-  //   display: block;
-  //   height: auto;
-  // }
+
 }
 // Clubcards with containner padding End //
 
