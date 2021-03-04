@@ -92,6 +92,8 @@
     font-weight: bold;
     font-size: 30px;
     position: relative;
+    color: black;
+    outline: none;
   }
 
   // Logo aNd Bookmark
@@ -127,3 +129,11 @@
 }
 // Clubcards with containner padding End //
 
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  color: black;
+}

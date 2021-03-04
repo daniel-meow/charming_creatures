@@ -16,6 +16,13 @@ background-color: #eb6383;
 color: #f1f1f1;
 border-radius: 25px 25px 25px 25px;
 border: 2px solid #eb6383;
+transition: all 0.3s;
+}
+
+.button:hover {
+  background-color: #fa9191;
+  color: #f1f1f1;
+  border: 2px solid white;
 }
 
 .button-donate {
