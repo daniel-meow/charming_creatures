@@ -6,6 +6,7 @@
         <%= f.input :description,placeholder: "description", label: false %>
         <%= f.input :address, placeholder: "address", label: false %>
         <%= f.input :category, placeholder: "category", label: false %>
+        <%= f.input :logo, as: :file %>
         <%= f.input :photos, as: :file, input_html: { multiple: true }%>
         <%= f.button :submit, class: 'button' %>
       <% end %>

@@ -1,4 +1,5 @@
 class Club < ApplicationRecord
+  has_one_attached :logo
   has_many_attached :photos
   has_many :club_species
   has_many :donations
