@@ -48,3 +48,44 @@
 .home-mt {
   margin-top: 50px;
 }
+
+#home-mission {
+  background-color: white;
+}
+
+.mission-container {
+  background-color: white;
+}
+
+.mission-headline {
+  text-align: center;
+  h2 {
+    font-weight: 900;
+  }
+}
+
+.missions {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+}
+
+.mission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  margin: 0 3em;
+
+  img {
+    width: 200px;
+  }
+
+  h3 {
+    margin-top: 0.5em;
+  }
+
+  p {
+    text-align: center;
+  }
+}
