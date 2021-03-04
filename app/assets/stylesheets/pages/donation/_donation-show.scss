@@ -10,7 +10,7 @@
 .card-certificate {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .container.donation-content {
@@ -57,20 +57,11 @@
   font-size: 50px;
 }
 
-.fa-paypal {
-  color: rgba(255, 255, 255, 0.74);
-}
-
 .certificate-button {
   padding-right: 25px;
   padding-left: 25px;
   margin-bottom: 12px;
   background-color: #D8B9C3;
-  border-color: #D8B9C3;
-}
-
-.certificate-button:hover {
-  background-color: #d8b9c3c5;
   border-color: #D8B9C3;
 }
 

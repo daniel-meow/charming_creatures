@@ -1,7 +1,6 @@
-<div class="banner-image">
-</div>
+
 <div class="container content-main">
-  <div class="container donation-content">
+  <div class="container create-club">
     <div class="donation-text">
       <h2><strong>Thank You <%=@donation.first_name%> <%= @donation.last_name %>!</strong></h2>
       <p>On behalf of <strong><%=@donation.club.name%></strong> we would like to thank you for your support of <strong><%=humanized_money_with_symbol(@donation.amount)%></strong>.<br>We are looking forward to keep you well informed about the latest news from <strong><%=@donation.club.name%></strong> and send our best wishes to you and your family.
@@ -20,11 +19,9 @@
             <img src="https://source.unsplash.com/80x80/?nature,dog" alt="animal">
         </div>
         <div class="card-bottom">
-          <h4><strong><%=humanized_money_with_symbol(@donation.amount)%> <i class="fab fa-paypal"></i></strong></i></h4>
+          <h4><strong><%=humanized_money_with_symbol(@donation.amount)%></strong></i></h4>
         </div>
-        <div class="certificate-button-box">
-          <a href="#" class="btn btn-primary certificate-button">certificate</a>
-        </div>
+        <div class="button">Certificate</div>
       </div>
     </div>
   </div>
