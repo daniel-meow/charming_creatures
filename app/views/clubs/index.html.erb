@@ -1,14 +1,22 @@
+<!DOCTYPE>
+
 <div class="container">
   <div class="banner">
     <h1><%= @headline %></h1>
-    <%= form_tag clubs_path, method: :get, class: "searchbar" do %>
-    <div class="input-group">
-      <%= text_field_tag :query, params[:query], placeholder: "Search", class: "form-control" %>
-      <div class="input-group-btn">
-        <%= button_tag "", :class => 'btn btn-info',:name => nil%>
-      </div>
+    <!-- Searchbar and Button Start -->
+    <div class="sb-banner">
+      <%= form_tag clubs_path, method: :get, class: "" do %>
+        <div class="s-n-b">
+          <div class="s">
+          <%= text_field_tag :query, params[:query], placeholder: "Search", class: "searchbar" %>
+          </div>
+          <div class="b">
+            <%= button_tag "Submit", :class => 'button',:name => nil%>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+    <!-- Searchbar and Button End -->
   </div>
   <div class="filters">
     <p>Placer Holder  Filter1 Filter2 Filter3</p>
