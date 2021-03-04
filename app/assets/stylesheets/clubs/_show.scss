@@ -1,12 +1,12 @@
 .club-header-image {
-  width: 100vw;
+  margin: 0;
   height: 50px;
-}
 
-.club-header-image img {
-  height: 320px;
-  object-fit: cover;
-  width: 100vw;
+  img {
+    height: 320px;
+    object-fit: cover;
+    width: 100vw;
+  }
 }
 
 .sm-icon {
@@ -53,8 +53,10 @@
 
 }
 
-.club-image img {
-  height: 270px;
-  width: 270px;
-  object-fit: cover;
+.club-image {
+    img {
+    height: 270px;
+    width: 270px;
+    object-fit: cover;
+  }
 }
