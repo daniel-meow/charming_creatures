@@ -7,14 +7,21 @@
   padding: 20px;
 }
 
-.donation-box-content {
-  
+.form-group.float.optional.donation_amount {
+ margin-right: 20px;
 }
 
-.full-name {
-  display: flex;
-   
-  .form-group.float.optional.donation_amount {
-   margin-right: 20px;
-  }
+.donation-btn{
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  color: #333;
+  background:pink;
+  box-shadow: 0 3px 20px 0 #0000003b;
+}
+
+.donation-btn:hover {
+  background: rgb(89, 211, 89);
+  color: white;
 }

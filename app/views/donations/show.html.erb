@@ -3,7 +3,7 @@
 <div class="container content-main">
   <div class="container donation-content">
     <div class="donation-text">
-      <h2><strong>Thank You <%=@donation.user.email%>!</strong></h2>
+      <h2><strong>Thank You <%=@donation.first_name%> <%= @donation.last_name %>!</strong></h2>
       <p>On behalf of <strong><%=@donation.club.name%></strong> we would like to thank you for your support of <strong><%=humanized_money_with_symbol(@donation.amount)%></strong>.<br>We are looking forward to keep you well informed about the latest news from <strong><%=@donation.club.name%></strong> and send our best wishes to you and your family.
       <br>
       <br>best regards<br>
@@ -15,7 +15,7 @@
         <div class="card-top">
         <div class="text">
           <h5 class="header"><strong>Summary</strong></h5>
-          <p><%=@donation.user.email%><br>has donated:</p>
+          <p><%=@donation.first_name%><br>has donated:</p>
         </div>
             <img src="https://source.unsplash.com/80x80/?nature,dog" alt="animal">
         </div>

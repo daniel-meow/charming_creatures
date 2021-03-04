@@ -17,13 +17,13 @@ puts "Database destroyed!"
 puts "Creating the Users..."
 
 users = []
-users << User.create(email: "seb@lewagon.org",password: "123456", address: "Tempelhofer Strasse 5", goal: "125.75" )
-users << User.create(email: "timo@home.org", password: "123456", address: "Samsungweg 78", goal: "326.89" )
-users << User.create(email: "winnie@puh.org", password: "123456", address: "Honigweg 7", goal: "425.56" )
+
+20.times do
+  users << User.create(email: Faker::Internet.email ,password: "123456", address: Faker::Address.street_address)
+end 
 puts "Users created! Test: #{users.first.email}"
 
 puts "Creating some Clubs"
-
 clubs = []
 
 clubs << Club.create(user_id: users[0].id, name: "A Better Place", description: "Wir helfen Hunden, die keiner mehr wollte. Hunde, die den Besitzern zu alt und zu krank wurden. Hunde, die misshandelt wurden. Mit deiner Hilfe möchten wir diesen armen Geschöpfen einen würdigen Lebensabend mit viel Liebe ermöglichen.", address: "Gutstrasse 31", category: ["rescue", "food"], instagram_link: "www.instagram.com", facebook_link: "www.facebook.com", website_link: "www.google.com")
