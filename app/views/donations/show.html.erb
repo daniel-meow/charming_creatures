@@ -8,28 +8,12 @@
       <br>best regards<br>
       <br>
       Your team from Charming Creatures</p>
-    </div>
-    <div class="card-certificate">
-      <div class="donation-summary card">
-        <div class="card-top">
-        <div class="text">
-          <h5 class="header"><strong>Summary</strong></h5>
-          <p><%=@donation.first_name%><br>has donated:</p>
-        </div>
-            <img src="https://source.unsplash.com/80x80/?nature,dog" alt="animal">
-        </div>
-        <div class="card-bottom">
-          <h4><strong><%=humanized_money_with_symbol(@donation.amount)%></strong></i></h4>
-        </div>
-        <div class="button">Certificate</div>
+      <br>
+      <h3><strong>Summary</strong></h3>
+      <h4><%=@donation.first_name%><br>has donated:<strong><%=humanized_money_with_symbol(@donation.amount)%></strong></h4><br>
+      <div class="justify-content">
+        <div class="button justify-content">Certificate</div>
       </div>
-    </div>
-  </div>
-
-  <div class="container donation-pictures-bottom">
-    <img src="https://source.unsplash.com/1600x900/?nature,dog" alt="animal">
-    <img src="https://source.unsplash.com/1600x900/?nature,cat" alt="animal">
-    <img src="https://source.unsplash.com/1600x900/?nature,horse" alt="animal">
-    <img src="https://source.unsplash.com/1600x900/?nature,animal" alt="animal">
   </div>
 </div>
+
