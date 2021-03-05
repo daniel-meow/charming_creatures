@@ -59,13 +59,17 @@
   </div>
   <div id="club-updates">
     <h2>Latest Updates</h2>
-    <% @updates.each do |update| %>
+    <% @articles.each do |article| %>
       <div class="update-box">
+      <% if article.photo.attached? %>
+        <div class="update-img"><%= cl_image_tag article.photo.key, width: 200, height: 200, crop: :fill%></div>
+      <% else %>
         <div class="update-img"></div>
+      <% end %>
         <div class="update-content">
-          <h3><%= update.title  %></h3>
-          <p>posted by: <%= update.club.name  %> on <%= update.created_at  %></p>
-          <p><%= update.description  %></p>
+          <h3><%= article.title  %></h3>
+          <p>posted by: <%= article.club.name  %> on <%= article.created_at  %></p>
+          <p><%= article.description%></p>
           <!-- New Button Class and style Start // Leo -->
           <button class="button" type="button">Read more</button>
           <!-- New Button Class and style End // Leo -->
