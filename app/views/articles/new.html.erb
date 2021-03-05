@@ -1,0 +1,9 @@
+<div class="container create-club">
+  <h1>Create a new Article</h1>
+  <%= simple_form_for [@club, @article] do |f| %>
+    <%= f.input :title, placeholder: "title" %>
+    <%= f.input :description, placeholder: "description" %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit, class: 'button' %>
+  <% end %>
+</div>

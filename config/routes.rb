@@ -4,10 +4,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :clubs, only: [ :show, :index, :new, :create] do 
     resources :donations, only: [ :new, :create]
+    resources :articles, only: [ :new, :create ]
   end
   resources :donations, only: :show do
     resources :payments, only: :new
   end
-  resources :species, only: [ :show ]
-  resources :articles, only: [:index, :show]
 end

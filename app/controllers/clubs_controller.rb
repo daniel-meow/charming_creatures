@@ -4,7 +4,7 @@ class ClubsController < ApplicationController
   def show
     find_club
     @short = @club.description.truncate(250);
-    @updates = Article.where(club_id: @club.id);
+    @articles = Article.where(club_id: @club.id);
   end
 
   def index
