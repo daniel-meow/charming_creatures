@@ -12,7 +12,7 @@ class ClubsController < ApplicationController
     @headline = "Support animal welfare organizations all over the world with your donation!"
     if params[:query].present?
       sql_query = "clubs.name @@ :query OR clubs.category @@ :query OR clubs.address @@ :query OR species.name @@ :query"
-      @clubs = Club.joins(club_species: [:species]).where(sql_query, query: "%#{params[:query]}%")
+      @clubs = Club.left_outer_joins(club_species: [:species]).where(sql_query, query: "%#{params[:query]}%")
       @headline = "The following results fit your search for: #{params[:query]}!"
     else
       @clubs = Club.all
