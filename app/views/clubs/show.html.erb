@@ -33,8 +33,8 @@
         <i class="fab fa-twitter-square sm-icon tw"></i>
       </div>
         <% if current_user == @club.user %>
-      <div class="sm-box">
-          <%= link_to "Delete Club", club_path(@club), method: :delete, data: { confirm: "Are you sure?" } %>
+      <div class="sm-box delete-btn">
+          <%= link_to "Delete Club", club_path(@club), class: 'delete-btn', method: :delete, data: { confirm: "Are you sure?" } %>
       </div>
         <% end %>
     </div>
@@ -64,6 +64,7 @@
   </div>
   <div id="club-updates">
     <h2>Latest Updates</h2>
+    <%= link_to "Create an Article", new_club_article_path(@club), class: 'add-btn' %>
     <% @articles.each do |article| %>
       <div class="update-box">
       <% if article.photo.attached? %>
@@ -76,12 +77,12 @@
           <p>posted by: <%= article.club.name  %> on <%= article.created_at  %></p>
           <p><%= article.description%></p>
           <!-- New Button Class and style Start // Leo -->
-          <button class="button" type="button">Read more</button>
-          <% if current_user == @club.user %>
-            <div class="sm-box">
-              <%= link_to "Delete Article", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %>
+          <div class="art-btn">
+            <button class="button" type="button">Read more</button>
+            <% if current_user == @club.user %>
+              <%= link_to "Delete Article", article_path(article), class: "delete-btn", method: :delete, data: { confirm: "Are you sure?" } %>
             </div>
-          <% end %>
+            <% end %>
           <!-- New Button Class and style End // Leo -->
         </div>
       </div>
