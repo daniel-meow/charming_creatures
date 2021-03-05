@@ -22,16 +22,21 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-lg-6">
-     <h1 class="clubavatar-margin-top"><%= @club.name  %></h1>
-     <div class="sm-box">
-      <i class="fab fa-instagram sm-icon ig"></i>
-    </div>
-    <div class="sm-box">
-     <i class="fab fa-facebook-square sm-icon fb"></i>
-    </div>
-    <div class="sm-box">
-     <i class="fab fa-twitter-square sm-icon tw"></i>
-    </div>
+      <h1 class="clubavatar-margin-top"><%= @club.name  %></h1>
+      <div class="sm-box">
+        <i class="fab fa-instagram sm-icon ig"></i>
+      </div>
+      <div class="sm-box">
+        <i class="fab fa-facebook-square sm-icon fb"></i>
+      </div>
+      <div class="sm-box">
+        <i class="fab fa-twitter-square sm-icon tw"></i>
+      </div>
+        <% if current_user == @club.user %>
+      <div class="sm-box">
+          <%= link_to "Delete Club", club_path(@club), method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
+        <% end %>
     </div>
     <div class="col-sm-12 col-lg-6 d-flex justify-content-end">
       <div class="donation-club-box d-flex flex-column justify-content-between">
@@ -72,6 +77,11 @@
           <p><%= article.description%></p>
           <!-- New Button Class and style Start // Leo -->
           <button class="button" type="button">Read more</button>
+          <% if current_user == @club.user %>
+            <div class="sm-box">
+              <%= link_to "Delete Article", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %>
+            </div>
+          <% end %>
           <!-- New Button Class and style End // Leo -->
         </div>
       </div>

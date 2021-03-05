@@ -15,10 +15,19 @@ class ArticlesController < ApplicationController
       render 'new'
     end
   end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @club = @article.club
+    @article.destroy
+    redirect_to club_path(@club)
+  end
   
   private
   
   def article_params
     params.require(:article).permit(:title, :description, :photo)
   end
+
+
 end
