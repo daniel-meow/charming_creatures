@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="banner">
-    <h1><%= @headline %></h1>
+    <h1 class="header-index"><%= @headline %></h1>
     <!-- Searchbar and Button Start -->
     <div class="sb-banner">
       <%= form_tag clubs_path, method: :get, class: "" do %>
@@ -19,7 +19,7 @@
     <!-- Searchbar and Button End -->
   </div>
   <div class="filters">
-    <p>Placer Holder  Filter1 Filter2 Filter3</p>
+    <p><!-- Placer Holder  Filter1 Filter2 Filter3 --></p>
   </div>
 </div>
 <!-- Clubcards with containner padding Start -->
@@ -33,7 +33,7 @@
               <div class="p-n-l"><%= cl_image_tag(club.photos.first.key, :class => "image") + cl_image_tag(club.logo.key, :class => "logo") %></div>
             <% else %>
               <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
-            <% end %> 
+            <% end %>
             <div class="name"> <%= club.name %></div>
             <div class="l-n-b">
               <div class="location"><i class="fas fa-map-marker-alt"></i> <%= club.address %></div>
