@@ -73,3 +73,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 # Cloudinary
 gem 'cloudinary', '~> 1.16.0'
+
+#W Wicked PDF
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
