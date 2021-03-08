@@ -19,10 +19,11 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container main-content">
   <div class="row">
-    <div class="col-sm-12 col-lg-6">
-      <h1 class="clubavatar-margin-top"><%= @club.name  %></h1>
+    <div class="col-sm-12 col-lg-6 club-name">
+      <h1 class="clubavatar-margin-top"><%= @club.name %></h1>
+      <p><%= @club.address  %></p>
       <div class="sm-box">
         <i class="fab fa-instagram sm-icon ig"></i>
       </div>
@@ -32,11 +33,6 @@
       <div class="sm-box">
         <i class="fab fa-twitter-square sm-icon tw"></i>
       </div>
-        <% if current_user == @club.user %>
-      <div class="sm-box delete-btn">
-          <%= link_to "Delete Club", club_path(@club), class: 'delete-btn', method: :delete, data: { confirm: "Are you sure?" } %>
-      </div>
-        <% end %>
     </div>
     <div class="col-sm-12 col-lg-6 d-flex justify-content-end">
       <div class="donation-club-box d-flex flex-column justify-content-between">
@@ -52,7 +48,7 @@
     </div>
   </div>
   <div id="club-about">
-    <h2>About</h2>
+    <h2>About us</h2>
     <p><%= @club.description %></p>
   </div>
   <div id="club-images">
@@ -62,6 +58,10 @@
       </div>
     <% end %>
   </div>
+    <div id="map"
+     style="width: 100%; height: 300px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   <div id="club-updates">
     <h2>Latest Updates</h2>
     <% if current_user == @club.user %>

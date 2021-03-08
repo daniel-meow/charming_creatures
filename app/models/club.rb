@@ -6,6 +6,9 @@ class Club < ApplicationRecord
   has_many :articles, dependent: :destroy
   belongs_to :user
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   validates :name, presence: true, uniqueness: true
   validates :address, :description, :category, presence: true
 end
