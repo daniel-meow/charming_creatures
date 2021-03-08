@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     resources :articles, only: [ :new, :create ]
   end
   resources :donations, only: :show do
-    resources :pdf, only: :show
     resources :payments, only: :new
   end
   resources :articles, only: [ :destroy ]

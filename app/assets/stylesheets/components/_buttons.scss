@@ -62,3 +62,23 @@ transition: all 0.3s;
   flex-direction: row;
   justify-content: space-between;
 }
+
+
+.button-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;;
+height: 60px;
+width: 200px;
+background-color: #eb6383;
+color: #f1f1f1;
+border-radius: 25px 25px 25px 25px;
+border: 2px solid #eb6383;
+transition: all 0.3s;
+}
+
+.button-link:hover {
+  background-color: #fa9191;
+  color: #f1f1f1;
+  border: 2px solid white;
+}

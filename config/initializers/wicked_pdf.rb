@@ -29,7 +29,7 @@ WickedPdf.config = {
   # :wkhtmltopdf => '/usr/local/bin/wkhtmltopdf',
   #:layout => "pdf.html",
   # :exe_path => '/usr/local/bin/wkhtmltopdf'
-    exe_path: '/home/daniel/.rbenv/shims/wkhtmltopdf',
+  exe_path: '/home/daniel/.rbenv/shims/wkhtmltopdf',
   enable_local_file_access: true
 
 }

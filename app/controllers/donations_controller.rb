@@ -6,8 +6,15 @@ class DonationsController < ApplicationController
       format.html
       format.pdf do
         render pdf: "Your_filename",
-        template: "donations/show.html.erb",
-        layout: 'pdf.html'
+        template: "donations/certificate.html.erb",
+        layout: 'pdf.html',
+        page_size: "A4",
+        margin: {
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+        }
       end
     end
   end
