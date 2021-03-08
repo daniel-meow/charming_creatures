@@ -3,6 +3,7 @@ class Donation < ApplicationRecord
   belongs_to :club
   before_create :sync
   monetize :amount_cents
+  # after_create :donation_mail
 
   def sync
     if user 
@@ -12,4 +13,11 @@ class Donation < ApplicationRecord
       self.address = user.address
     end
   end
+  
+  private
+
+  # def donation_mail
+  #   UserMailer.with(donation: self).thanks.deliver_now
+  # end
 end
+
