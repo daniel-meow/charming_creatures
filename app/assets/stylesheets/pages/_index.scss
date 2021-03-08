@@ -41,17 +41,17 @@
 .container-card {
   display: grid;
   grid-template-columns: repeat(auto-fit, 400px);
-  grid-gap: 16px;
+  grid-gap: 21px;
   justify-content: center;
 }
 
 
 .card-index {
-  border-radius:  8px;
+  border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   // box-shadow: 2.5px 2.5px 2.5px 2.5px #363062;
   padding-bottom: 20px;
-  margin: 10px 10px 10px 10px;
+  margin: 10px;
   position: relative;
   white-space: normal;
   font-size: 14px;
@@ -64,19 +64,19 @@
   // min-width: 400px;
 
   .card-index-inside {
-    padding: 5px 5px 5px 10px;
+    padding: 10px;
     align-items: center;
   }
 
   // Picture aNd Logo
   .p-n-l {
     position: relative;
-    height: 250px;
+    height: 200px;
     border-radius: 3%;
     overflow: hidden;
 
     .image {
-      height: 250px;
+      height: 200px;
       min-width: 100%;
       object-fit: cover;
       z-index: 1;
@@ -85,7 +85,7 @@
     .logo {
       object-fit: cover;
       height: 50px;
-      width: 70px;
+      width: 50px;
       position: absolute;
       bottom: 10px;
       right: 10px;
@@ -93,6 +93,7 @@
       box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
       align-items: flex-end;
       z-index: 2;
+      border-radius: 8px;
     }
   }
 
