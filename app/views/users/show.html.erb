@@ -54,6 +54,7 @@
         <% else %>
           <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
         <% end %>
+        <h2> <%= link_to club.name, club_path(club)  %></h2>
         <div class="update-buttons">
           <%= link_to "edit club", edit_club_path(club), class:"button-update"  %>
           <%= link_to "delete club",club_path(club), class:"button-update", method: :delete, data: { confirm: "Are you sure?" }  %>        
