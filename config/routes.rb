@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
   resources :clubs do 
+
     resources :donations, only: [ :new, :create]
     resources :articles, only: [ :new, :create ]
     resources :bookmarks, only: [ :new, :create, :destroy ]
@@ -18,4 +20,5 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show, :destroy ]
   # resources :users, only: [:show]
   get 'profile', to: "users#show"
+  post 'profile', to: "users#update_goal"
 end

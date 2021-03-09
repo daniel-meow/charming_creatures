@@ -1,48 +1,34 @@
-<div class="header-index">Change donation goal
-<div>FORM_TAG</div>
-<div class="donation-goal" ></div>
-<div class="donation-progress" style= "width: <%= @donation_percentage.to_s + '%' %>"></div>
-
-
+<h1>Hello <%= @user.first_name%> <%= @user.last_name %></h1>
+<div class="header-index">Choose your donation goal current <%= @user.goal %> <div>
+    <%= form_with url: profile_path, method: :post do |f| %>
+      <%= f.number_field :goal, placeholder: @user.goal, label: "What Is Your Donation Goal", class: "form-control" %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <div class="donation-bar">
+    <div class="donation-goal" >
+      <%= @user.goal %>
+    </div>
+    <div class="donation-progress" style= "width: <%= @donation_percentage.to_s + '%' %>"></div> <%= @donation_percentage.to_s + '%' %>">
+  </div>
 </div>
 <div>
-<h1>Hello <%= @user.first_name%> <%= @user.last_name %></h1>
 </div>
-<div><%= link_to "Edit Profile", edit_user_registration_path, class: "button-donate" %></div>
 <div><!-- Trigger/Open The Modal -->
 <button id="myBtn1" class="button-donate">Edit Profile</button>
 
 <!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <%= render "devise/registrations/form"  %>
-    <p>Content</p>
-  </div>
-</div>
-<div>
-  <div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= render "devise/registrations/form"  %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+<div class="container-main-u">
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content1">
+      <span class="close">&times;</span>
+      <%= render "devise/registrations/form"  %>
     </div>
   </div>
 </div>
-<p>HELLLO</p>
+
+<div>
 </div>
 
 <div class="container clubs-own">

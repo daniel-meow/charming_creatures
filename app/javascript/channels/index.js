@@ -8,11 +8,15 @@ channels.keys().forEach(channels)
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn1");
+var btn = document.querySelector(".button-donate");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+// btn.addEventListener("click", () => {
+//   modal.style.display = "block";
+//   console.log('hello');
+// })
 // When the user clicks on the button, open the modal
 if (btn) {
 btn.onclick = function() {
@@ -31,3 +35,4 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+// console.log('hello')
