@@ -51,10 +51,20 @@ class ClubsController < ApplicationController
     end
   end
 
+  def edit
+    @club = Club.find(params[:id])
+  end
+
+  def update
+    @club = Club.find(params[:id])
+    @club.update(club_params)
+    redirect_to club_path(@club)
+  end
+
   def destroy
     @club = Club.find(params[:id])
     @club.destroy
-    redirect_to root_path
+    redirect_to profile_path
   end
 
   private

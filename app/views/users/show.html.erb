@@ -1,0 +1,65 @@
+<div class="header-index">Change donation goal
+<div>FORM_TAG</div>
+<div class="donation-goal" ></div>
+<div class="donation-progress" style= "width: <%= @donation_percentage.to_s + '%' %>"></div>
+
+
+</div>
+<div>
+<h1>Hello <%= @user.first_name%> <%= @user.last_name %></h1>
+</div>
+<div><%= link_to "Edit Profile", edit_user_registration_path, class: "button-donate" %></div>
+<div><!-- Trigger/Open The Modal -->
+<button id="myBtn1" class="button-donate">Edit Profile</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <%= render "devise/registrations/form"  %>
+    <p>Content</p>
+  </div>
+</div>
+<div>
+  <div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render "devise/registrations/form"  %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<p>HELLLO</p>
+</div>
+
+<div class="container">
+  <h2>Your Clubs</h2>
+  <% @clubs.each do |club| %>
+    <div class="card-index club-index update-clubs">
+        <% if club.photos.first && club.logo.attached? %>
+          <div class="p-n-l"><%= cl_image_tag(club.photos.first.key, :class => "image") + cl_image_tag(club.logo.key, :class => "logo") %></div>
+        <% else %>
+          <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
+        <% end %>
+        <h2> <%= link_to club.name, club_path(club)  %></h2>
+        <div class="update-buttons">
+          <%= link_to "edit club", edit_club_path(club), class:"button-update"  %>
+          <%= link_to "delete club",club_path(club), class:"button-update", method: :delete, data: { confirm: "Are you sure?" }  %>        
+        </div>
+    </div>
+  <% end %>
+</div>
+
