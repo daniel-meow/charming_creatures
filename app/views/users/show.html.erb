@@ -1,7 +1,7 @@
 <h1>Hello <%= @user.first_name%> <%= @user.last_name %></h1>
 <div class="header-index">Choose your donation goal current <%= @user.goal %> <div>
     <%= form_with url: profile_path, method: :post do |f| %>
-      <%= f.number_field :goal, placeholder: @user.goal, label: "What Is Your Donation Goal", class: "form-control" %>
+      <%= f.number_field :goal, label: "What Is Your Donation Goal", class: "form-control" %>
       <%= f.submit %>
     <% end %>
   </div>
