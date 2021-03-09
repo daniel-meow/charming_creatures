@@ -3,14 +3,14 @@
   height: min-content;
 
   img {
-    height: 320px;
+    height: 450px;
     object-fit: cover;
     width: 100vw;
   }
 }
 
 .sm-icon {
-  font-size: 36px;
+  font-size: 27px;
 
   &.ig {
     color: #D6228D;
@@ -26,12 +26,10 @@
 
 .sm-box {
   display: inline-flex;
-  border: 1px solid $clr-primary;
   border-radius: .5em;
-  padding: 1em;
-  margin-right: 1em;
-  margin-top: 1em;
+  margin-right: 9px;
   transition: border-radius 1s;
+  cursor: pointer;
 
   &:hover {
     border-radius: 1em;
@@ -40,6 +38,12 @@
 
 #club-about {
   margin-top: 2em;
+
+  h2 {
+    margin-top: 120px;
+    font-weight: bold;
+  }
+
   p {
     line-height: 2;
   }
@@ -49,8 +53,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 9px;
+  margin-top: 150px;
   margin-bottom: 2em;
-
+  border-radius: .5em;
 }
 
 .club-image {
@@ -58,7 +63,15 @@
     height: 270px;
     width: 270px;
     object-fit: cover;
+    border-radius: .5em;
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
   }
+}
+
+.club-name h1 {
+  font-size: 3.5rem !important;
+  font-weight: bolder !important;
 }
 
 .update-box {
@@ -75,11 +88,6 @@
   height: 200px;
   min-width: 200px;
   width: 200px;
-  flex-grow: 1;
-  background-image: asset-url("kitten-placeholder.png");
-  background-size:cover;
-  background-position: center;
-
 }
 
 .update-content {
@@ -108,4 +116,14 @@
   background-color: #fa9191;
   color: #f1f1f1;
   border: 2px solid white;
+}
+
+.main-content {
+  margin-top: 100px;
+}
+
+#map {
+  margin-bottom: 150px;
+  border-radius: .5em;
+  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
 }

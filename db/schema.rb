@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_03_09_084455) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,6 +66,8 @@ ActiveRecord::Schema.define(version: 2021_03_09_084455) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_clubs_on_user_id"
   end
 
@@ -100,6 +103,12 @@ ActiveRecord::Schema.define(version: 2021_03_09_084455) do
     t.string "checkout_session_id"
     t.index ["club_id"], name: "index_donations_on_club_id"
     t.index ["user_id"], name: "index_donations_on_user_id"
+  end
+
+  create_table "pdfs", force: :cascade do |t|
+    t.string "show"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "species", force: :cascade do |t|

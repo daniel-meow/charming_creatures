@@ -1,8 +1,12 @@
 
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <div class="container content-main">
   <div class="container create-club">
     <div class="donation-text">
       <h2><strong>Thank You <%=@donation.first_name%> <%= @donation.last_name %>!</strong></h2>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_A2CKzb.json" background="transparent"  speed="0.4"  style="width: 300px; height: 300px;" autoplay></lottie-player>
+      </div>
       <p>On behalf of <strong><%=@donation.club.name%></strong> we would like to thank you for your support of <strong><%=humanized_money_with_symbol(@donation.amount)%></strong>.<br>We are looking forward to keep you well informed about the latest news from <strong><%=@donation.club.name%></strong> and send our best wishes to you and your family.
       <br>
       <br>best regards<br>
@@ -10,10 +14,9 @@
       Your team from Charming Creatures</p>
       <br>
       <h3><strong>Summary</strong></h3>
-      <h4><%=@donation.first_name%><br>has donated:<strong><%=humanized_money_with_symbol(@donation.amount)%></strong></h4><br>
+      <h4><%=@donation.first_name%><br>has donated: <strong><%=humanized_money_with_symbol(@donation.amount)%></strong></h4><br>
       <div class="justify-content">
-        <div class="button justify-content">Certificate</div>
+        <%= link_to 'Certificate', donation_path(@donation, :format => :pdf), class:"button-link" %>
       </div>
   </div>
 </div>
-
