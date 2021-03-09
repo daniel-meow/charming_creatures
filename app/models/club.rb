@@ -4,6 +4,7 @@ class Club < ApplicationRecord
   has_many :club_species
   has_many :donations
   has_many :articles, dependent: :destroy
+  has_many :chatrooms
   belongs_to :user
 
   geocoded_by :address
