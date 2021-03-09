@@ -6,6 +6,14 @@ class BookmarksController < ApplicationController
   def show
   end
 
+  def destroy
+    @bookmark = Bookmark.where(club_id: params[:club_id]).where(user_id: current_user.id)
+    @bookmark.destroy_all
+    
+    redirect_to club_path(params[:club_id])
+    
+  end
+
   def create
     @club = Club.find(params[:club_id])
     @user = current_user  

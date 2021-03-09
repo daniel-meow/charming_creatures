@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :clubs, only: [ :show, :index, :new, :create, :destroy] do 
     resources :donations, only: [ :new, :create]
     resources :articles, only: [ :new, :create ]
-    resources :bookmarks, only: [ :new, :create ]
+    resources :bookmarks, only: [ :new, :create, :destroy ]
   end
   resources :donations, only: :show do
     resources :payments, only: :new

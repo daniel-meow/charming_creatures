@@ -35,11 +35,11 @@
       </div>
       <%= @isbookmarked ? "BOOKMARKED!" : "NOT BOOKMARKED" %>
       <% if @isbookmarked  %>
-        <%= render "bookmarks/deletebookmark"  %>
+        <%= link_to "Delete Bookmark", club_bookmark_path(@club), method: :delete, class:"button"  %>
       <% else %>
        <%= render "bookmarks/newbookmark" %>
       <% end %>
-      
+
       
     </div>
     <div class="col-sm-12 col-lg-6 d-flex justify-content-end">

@@ -15,7 +15,8 @@ class ClubsController < ApplicationController
 
     @user.bookmarks.each do |bkmrk|
       if @club.bookmarks.include?(bkmrk)
-        @isbookmarked = true;
+        @isbookmarked = true
+        @userbookmark = bkmrk
       else
         puts "NOPE FALSE"
       end
