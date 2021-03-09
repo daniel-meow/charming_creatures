@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_08_110315) do
+ActiveRecord::Schema.define(version: 2021_03_09_141557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(version: 2021_03_08_110315) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["club_id"], name: "index_articles_on_club_id"
+  end
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "club_id", null: false
+    t.index ["club_id"], name: "index_chatrooms_on_club_id"
+    t.index ["user_id"], name: "index_chatrooms_on_user_id"
   end
 
   create_table "club_species", force: :cascade do |t|
@@ -86,6 +96,16 @@ ActiveRecord::Schema.define(version: 2021_03_08_110315) do
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "species", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -110,9 +130,13 @@ ActiveRecord::Schema.define(version: 2021_03_08_110315) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "articles", "clubs"
+  add_foreign_key "chatrooms", "clubs"
+  add_foreign_key "chatrooms", "users"
   add_foreign_key "club_species", "clubs"
   add_foreign_key "club_species", "species"
   add_foreign_key "clubs", "users"
   add_foreign_key "donations", "clubs"
   add_foreign_key "donations", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
 end
