@@ -11,5 +11,10 @@ Rails.application.routes.draw do
   resources :donations, only: :show do
     resources :payments, only: :new
   end
-  resources :articles, only: [ :destroy ]
+
+  resources :species, only: [ :show ]
+  resources :articles, only: [:index, :show, :destroy ]
+  # resources :users, only: [:show]
+  get 'profile', to: "users#show"
 end
+
