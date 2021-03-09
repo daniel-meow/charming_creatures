@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'bookmarks/index'
+  get 'bookmarks/create'
   get 'pdf/show'
   devise_for :users
   root to: 'pages#home'
@@ -11,4 +13,5 @@ Rails.application.routes.draw do
     resources :payments, only: :new
   end
   resources :articles, only: [ :destroy ]
+  resources :bookmarks, only: [ :index]
 end

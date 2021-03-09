@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2021_03_08_110315) do
+ActiveRecord::Schema.define(version: 2021_03_09_105251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +43,15 @@ ActiveRecord::Schema.define(version: 2021_03_08_110315) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["club_id"], name: "index_articles_on_club_id"
+  end
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.bigint "club_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["club_id"], name: "index_bookmarks_on_club_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "club_species", force: :cascade do |t|
@@ -117,6 +125,8 @@ ActiveRecord::Schema.define(version: 2021_03_08_110315) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "articles", "clubs"
+  add_foreign_key "bookmarks", "clubs"
+  add_foreign_key "bookmarks", "users"
   add_foreign_key "club_species", "clubs"
   add_foreign_key "club_species", "species"
   add_foreign_key "clubs", "users"
