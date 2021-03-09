@@ -45,7 +45,7 @@
 <p>HELLLO</p>
 </div>
 
-<div class="container">
+<div class="container clubs-own">
   <h2>Your Clubs</h2>
   <% @clubs.each do |club| %>
     <div class="card-index club-index update-clubs">
@@ -54,10 +54,10 @@
         <% else %>
           <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
         <% end %>
-        <h2> <%= link_to club.name, club_path(club)  %></h2>
+        <h3> <%= link_to club.name, club_path(club)  %></h3>
         <div class="update-buttons">
-          <%= link_to "edit club", edit_club_path(club), class:"button-update"  %>
-          <%= link_to "delete club",club_path(club), class:"button-update", method: :delete, data: { confirm: "Are you sure?" }  %>        
+          <%= link_to "edit club", edit_club_path(club), class:"read-btn"  %>
+          <%= link_to "delete club",club_path(club), class:"add-btn", method: :delete, data: { confirm: "Are you sure?" }  %>        
         </div>
     </div>
   <% end %>

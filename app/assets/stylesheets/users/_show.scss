@@ -27,7 +27,7 @@
   width: 90px;
   background-color: #eb6383;
   color: #f1f1f1;
-  border-radius: 25px 25px 25px 25px;
+  border-radius: 25px;
   border: 2px solid #eb6383;
   transition: all 0.3s;
   text-transform: uppercase;
@@ -41,4 +41,14 @@
 
 .club-index {
   padding-bottom: 0 !important;
+  width: 100% !important;
+}
+
+.clubs-own h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.clubs-own h3 {
+  padding: 9px;
 }
