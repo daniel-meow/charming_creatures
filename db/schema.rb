@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 2021_03_09_084455) do
 
-ActiveRecord::Schema.define(version: 2021_03_08_110315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,24 @@ ActiveRecord::Schema.define(version: 2021_03_08_110315) do
     t.float "latitude"
     t.float "longitude"
     t.index ["user_id"], name: "index_clubs_on_user_id"
+  end
+
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string "locked_by"
+    t.string "queue"
+    t.datetime "created_at", precision: 6
+    t.datetime "updated_at", precision: 6
+    t.string "progress_stage"
+    t.integer "progress_current", default: 0
+    t.integer "progress_max", default: 0
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
   create_table "donations", force: :cascade do |t|
