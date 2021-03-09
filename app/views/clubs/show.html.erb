@@ -34,7 +34,12 @@
         <i class="fab fa-twitter-square sm-icon tw"></i>
       </div>
       <%= @isbookmarked ? "BOOKMARKED!" : "NOT BOOKMARKED" %>
-      <%= render "bookmarks/newbookmark"  %>
+      <% if @isbookmarked  %>
+        <%= render "bookmarks/deletebookmark"  %>
+      <% else %>
+       <%= render "bookmarks/newbookmark" %>
+      <% end %>
+      
       
     </div>
     <div class="col-sm-12 col-lg-6 d-flex justify-content-end">
