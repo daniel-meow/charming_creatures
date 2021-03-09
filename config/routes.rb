@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :clubs do 
+  resources :clubs do
 
     resources :donations, only: [ :new, :create]
     resources :articles, only: [ :new, :create ]

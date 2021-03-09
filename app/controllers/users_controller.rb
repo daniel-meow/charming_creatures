@@ -23,6 +23,5 @@ class UsersController < ApplicationController
 
     # raise
     @clubs = Club.where(user_id: @user.id)
-
   end
 end
