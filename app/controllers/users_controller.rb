@@ -7,7 +7,6 @@ class UsersController < ApplicationController
       @donations = @user.donations.map {|donation| donation.amount_cents}.sum / 100
       @donation_percentage = @donations/@user.goal * 100
     end
-
   end
 
   def update_goal
@@ -23,6 +22,5 @@ class UsersController < ApplicationController
 
     # raise
     @clubs = Club.where(user_id: @user.id)
-
   end
 end
