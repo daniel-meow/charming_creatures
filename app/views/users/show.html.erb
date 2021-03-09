@@ -28,24 +28,23 @@
   </div>
 </div>
 
-<div>
-</div>
-
 <div class="container clubs-own">
-  <h2>Your Clubs</h2>
-  <% @clubs.each do |club| %>
-    <div class="card-index club-index update-clubs">
-        <% if club.photos.first && club.logo.attached? %>
-          <div class="p-n-l"><%= cl_image_tag(club.photos.first.key, :class => "image") + cl_image_tag(club.logo.key, :class => "logo") %></div>
-        <% else %>
-          <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
-        <% end %>
-        <h3> <%= link_to club.name, club_path(club)  %></h3>
-        <div class="update-buttons">
-          <%= link_to "edit club", edit_club_path(club), class:"read-btn"  %>
-          <%= link_to "delete club",club_path(club), class:"add-btn", method: :delete, data: { confirm: "Are you sure?" }  %>        
-        </div>
-    </div>
+  <% if @clubs  %>
+    <h2>Your Clubs</h2>
+    <% @clubs.each do |club| %>
+      <div class="card-index club-index update-clubs">
+          <% if club.photos.first && club.logo.attached? %>
+            <div class="p-n-l"><%= cl_image_tag(club.photos.first.key, :class => "image") + cl_image_tag(club.logo.key, :class => "logo") %></div>
+          <% else %>
+            <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
+          <% end %>
+          <h3> <%= link_to club.name, club_path(club)  %></h3>
+          <div class="update-buttons">
+            <%= link_to "edit club", edit_club_path(club), class:"read-btn"  %>
+            <%= link_to "delete club",club_path(club), class:"add-btn", method: :delete, data: { confirm: "Are you sure?" }  %>
+          </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
 
