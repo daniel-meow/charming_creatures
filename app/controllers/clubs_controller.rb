@@ -10,15 +10,16 @@ class ClubsController < ApplicationController
     @bookmark = Bookmark.new
     @club.bookmarks = Bookmark.where(club_id: @club.id)
     @user = current_user
-    @user.bookmarks = Bookmark.where(user_id: @user.id)
-    @isbookmarked = false
+    # Logic for the bookmark
+    if current_user 
+      @user.bookmarks = Bookmark.where(user_id: @user.id)
+      @isbookmarked = false
 
-    @user.bookmarks.each do |bkmrk|
-      if @club.bookmarks.include?(bkmrk)
-        @isbookmarked = true
-        @userbookmark = bkmrk
-      else
-        puts "NOPE FALSE"
+      @user.bookmarks.each do |bkmrk|
+        if @club.bookmarks.include?(bkmrk)
+          @isbookmarked = true
+          @userbookmark = bkmrk
+        end
       end
     end
 
