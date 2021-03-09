@@ -7,7 +7,22 @@ class ClubsController < ApplicationController
     @articles = Article.where(club_id: @club.id);
 
     @markers = [{lat: @club.latitude, lng: @club.longitude}]
-  
+    @bookmark = Bookmark.new
+    @club.bookmarks = Bookmark.where(club_id: @club.id)
+    @user = current_user
+    # Logic for the bookmark
+    if current_user 
+      @user.bookmarks = Bookmark.where(user_id: @user.id)
+      @isbookmarked = false
+
+      @user.bookmarks.each do |bkmrk|
+        if @club.bookmarks.include?(bkmrk)
+          @isbookmarked = true
+          @userbookmark = bkmrk
+        end
+      end
+    end
+
   end
 
   def index
@@ -36,10 +51,20 @@ class ClubsController < ApplicationController
     end
   end
 
+  def edit
+    @club = Club.find(params[:id])
+  end
+
+  def update
+    @club = Club.find(params[:id])
+    @club.update(club_params)
+    redirect_to club_path(@club)
+  end
+
   def destroy
     @club = Club.find(params[:id])
     @club.destroy
-    redirect_to root_path
+    redirect_to profile_path
   end
 
   private

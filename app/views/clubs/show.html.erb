@@ -33,6 +33,14 @@
       <div class="sm-box">
         <i class="fab fa-twitter-square sm-icon tw"></i>
       </div>
+      <%= @isbookmarked ? "BOOKMARKED!" : "NOT BOOKMARKED" %>
+      <% if @isbookmarked  %>
+        <%= link_to "Delete Bookmark", club_bookmark_path(@club), method: :delete, class:"button"  %>
+      <% else %>
+       <%= render "bookmarks/newbookmark" %>
+      <% end %>
+
+      
     </div>
     <div class="col-sm-12 col-lg-6 d-flex justify-content-end">
       <div class="donation-club-box d-flex flex-column justify-content-between">
@@ -59,9 +67,10 @@
     <% end %>
   </div>
     <div id="map"
-     style="width: 100%; height: 300px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      style="width: 100%; height: 300px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+     </div>
   <div id="club-updates">
     <h2>Latest Updates</h2>
     <% if current_user == @club.user %>
@@ -80,9 +89,8 @@
           <p><%= article.description%></p>
           <!-- New Button Class and style Start // Leo -->
           <div class="art-btn">
-            <button class="button" type="button">Read more</button>
+            <button class="read-btn" type="button">Read more</button>
             <% if current_user == @club.user %>
-              <%= link_to "Delete Article", article_path(article), class: "delete-btn", method: :delete, data: { confirm: "Are you sure?" } %>
             </div>
             <% end %>
           </div>

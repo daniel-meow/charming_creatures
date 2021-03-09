@@ -17,3 +17,45 @@ position: relative;
   background-color: green;
   position: absolute;
 }
+
+.update-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px;
+}
+
+.button-update {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 90px;
+  background-color: #eb6383;
+  color: #f1f1f1;
+  border-radius: 25px;
+  border: 2px solid #eb6383;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+
+.button-update:hover {
+  background-color: #fa9191;
+  color: #f1f1f1;
+  border: 2px solid white;
+}
+
+.club-index {
+  padding-bottom: 0 !important;
+  width: 100% !important;
+}
+
+.clubs-own h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.clubs-own h3 {
+  padding: 9px;
+}
