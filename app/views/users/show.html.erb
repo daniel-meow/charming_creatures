@@ -45,3 +45,20 @@
 <p>HELLLO</p>
 </div>
 
+<div class="container">
+  <h2>Your Clubs</h2>
+  <% @clubs.each do |club| %>
+    <div class="card-index club-index update-clubs">
+        <% if club.photos.first && club.logo.attached? %>
+          <div class="p-n-l"><%= cl_image_tag(club.photos.first.key, :class => "image") + cl_image_tag(club.logo.key, :class => "logo") %></div>
+        <% else %>
+          <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
+        <% end %>
+        <div class="update-buttons">
+          <%= link_to "edit club", edit_club_path(club), class:"button-update"  %>
+          <%= link_to "delete club",club_path(club), class:"button-update", method: :delete, data: { confirm: "Are you sure?" }  %>        
+        </div>
+    </div>
+  <% end %>
+</div>
+

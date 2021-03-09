@@ -8,5 +8,6 @@ class UsersController < ApplicationController
       @donation_percentage = @donations/@user.goal * 100
     end
     # raise
+    @clubs = Club.where(user_id: @user.id)
   end
 end

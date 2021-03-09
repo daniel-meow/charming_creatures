@@ -49,7 +49,7 @@ class ClubsController < ApplicationController
   def destroy
     @club = Club.find(params[:id])
     @club.destroy
-    redirect_to root_path
+    redirect_to profile_path
   end
 
   private
