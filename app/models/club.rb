@@ -5,6 +5,7 @@ class Club < ApplicationRecord
   has_many :donations
   has_many :articles, dependent: :destroy
   belongs_to :user
+  has_many :bookmarks
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

@@ -33,6 +33,9 @@
       <div class="sm-box">
         <i class="fab fa-twitter-square sm-icon tw"></i>
       </div>
+      <%= @isbookmarked ? "BOOKMARKED!" : "NOT BOOKMARKED" %>
+      <%= render "bookmarks/newbookmark"  %>
+      
     </div>
     <div class="col-sm-12 col-lg-6 d-flex justify-content-end">
       <div class="donation-club-box d-flex flex-column justify-content-between">
