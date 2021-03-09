@@ -73,3 +73,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 # Cloudinary
 gem 'cloudinary', '~> 1.16.0'
+
+#Progressbar
+# gem 'delayed_job_active_record'
+# gem 'progress_job'
