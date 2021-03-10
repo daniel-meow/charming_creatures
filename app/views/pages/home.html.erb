@@ -81,9 +81,9 @@
             <div class="card-index">
                 <div class="card-index-inside">
                   <% if article.photo.attached? %>
-                    <div class="update-img"><%= cl_image_tag article.photo.key%></div>
+                    <div class="p-n-l"><%= cl_image_tag(article.photo.key, :class => "image")%></div>
                   <% else %>
-                    <div class="update-img"></div>
+                    <div class="p-n-l"><%= image_tag('example_bear.jpg', :class => "image")%></div>
                   <% end %>
                     <div class="update-content">
                       <h3><%= article.title  %></h3>
