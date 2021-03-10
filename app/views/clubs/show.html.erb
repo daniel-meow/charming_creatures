@@ -107,47 +107,45 @@
 </div>
 
 <% if user_signed_in? %>
-   
-<% end %>
-
-<div class="chat-widget-wrapper">
-  <div class="chat-widget-container open">
-    <div class="chat-widget-text">
-      <p class="heading">LIVE CHAT</p>
-      <p>How can we help?</p>
+  <div class="chat-widget-wrapper">
+    <div class="chat-widget-container open">
+      <div class="chat-widget-text">
+        <p class="heading">LIVE CHAT</p>
+        <p>How can we help?</p>
+      </div>
+      <div class="chat-widget-avatar">
+        <img src="http://image.flaticon.com/icons/svg/236/236831.svg" alt="" />
+      </div>
     </div>
-    <div class="chat-widget-avatar">
-      <img src="http://image.flaticon.com/icons/svg/236/236831.svg" alt="" />
-    </div>
-  </div>
-  <div class="chat-box-container show">
-    <div class="chat-box-nav">
-    </div>
-
-    <div class="chat-box-content">
-      <div id="messages" class="messages" data-chatroom-id="<%= @chatroom.id %>">
-        <% @chatroom.messages.each do |message| %>
-          <div class="message-container <%= message.user == current_user ? "sender" : "reciever" %>" id="message-<%= message.id %>">
-          <div class="msg <%= message.user == current_user ? "" : "orange" %>">
-            <i class="author">
-              <span><strong><%= message.user.first_name %></strong></span>
-            </i>
-            <p><%= message.content %></p>
-          </div>
-          </div>
-        <% end %>
+    <div class="chat-box-container show">
+      <div class="chat-box-nav">
       </div>
     </div>
 
-      <div>
-        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-          <div class="input-group mb-3">     
-            <%= f.input :content, label: false, placeholder: "send a message", input_html: { class: "chat-msg" }, wrapper_html: {class: 'm-0'}  %>
-            <div class="input-group-append">
-              <%= f.submit  "send", class: "btn btn-outline-secondary"%>
+      <div class="chat-box-content">
+        <div id="messages" class="messages" data-chatroom-id="<%= @chatroom.id %>">
+          <% @chatroom.messages.each do |message| %>
+            <div class="message-container <%= message.user == current_user ? "sender" : "reciever" %>" id="message-<%= message.id %>">
+            <div class="msg <%= message.user == current_user ? "" : "orange" %>">
+              <i class="author">
+                <span><strong><%= message.user.first_name %></strong></span>
+              </i>
+              <p><%= message.content %></p>
             </div>
-          </div>
-        <% end %>
+            </div>
+          <% end %>
+        </div>
+
+        <div>
+          <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+            <div class="input-group mb-3">     
+              <%= f.input :content, label: false, placeholder: "send a message", input_html: { class: "chat-msg" }, wrapper_html: {class: 'm-0'}  %>
+              <div class="input-group-append">
+                <%= f.submit  "send", class: "btn btn-outline-secondary"%>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
   </div>
-</div>
+<% end %>
