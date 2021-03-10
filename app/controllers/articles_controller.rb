@@ -1,5 +1,10 @@
 class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!
+
+  def show
+    find_article
+  end
+
   def new
     @club = Club.find(params[:club_id])
     @article = Article.new
@@ -22,12 +27,15 @@ class ArticlesController < ApplicationController
     @article.destroy
     redirect_to club_path(@club)
   end
-  
+
   private
-  
+
   def article_params
     params.require(:article).permit(:title, :description, :photo)
   end
 
+  def find_article
+    @article = Article.find(params[:id])
+  end
 
 end
