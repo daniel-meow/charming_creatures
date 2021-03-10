@@ -3,6 +3,7 @@
 @import "articles";
 @import "donation/donation-show";
 @import "show";
+@import "../users/show";
 
 .flex-grow-1 {
   background: white;
@@ -98,6 +99,9 @@
   }
 
   .name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     font-weight: bold;
     font-size: 30px;
     position: relative;
@@ -154,3 +158,20 @@ a {
   }
 }
 
+.fa-heart {
+  padding-top: 12px;
+  padding-right: 12px;
+  color: #eb6383 !important;
+  font-size: 24px;
+  z-index: 5;
+}
+
+.fa-heart:hover {
+  color: #eb6383 !important;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.fa-map-marker-alt {
+  color: #eb63839a !important;
+}

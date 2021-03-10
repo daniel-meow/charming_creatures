@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_09_141557) do
+
+
+ActiveRecord::Schema.define(version: 2021_03_09_105251) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +48,7 @@ ActiveRecord::Schema.define(version: 2021_03_09_141557) do
     t.index ["club_id"], name: "index_articles_on_club_id"
   end
 
+
   create_table "chatrooms", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -53,6 +57,14 @@ ActiveRecord::Schema.define(version: 2021_03_09_141557) do
     t.bigint "club_id", null: false
     t.index ["club_id"], name: "index_chatrooms_on_club_id"
     t.index ["user_id"], name: "index_chatrooms_on_user_id"
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.bigint "club_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["club_id"], name: "index_bookmarks_on_club_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "club_species", force: :cascade do |t|
@@ -80,6 +92,24 @@ ActiveRecord::Schema.define(version: 2021_03_09_141557) do
     t.index ["user_id"], name: "index_clubs_on_user_id"
   end
 
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string "locked_by"
+    t.string "queue"
+    t.datetime "created_at", precision: 6
+    t.datetime "updated_at", precision: 6
+    t.string "progress_stage"
+    t.integer "progress_current", default: 0
+    t.integer "progress_max", default: 0
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
   create_table "donations", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "club_id", null: false
@@ -96,6 +126,7 @@ ActiveRecord::Schema.define(version: 2021_03_09_141557) do
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
+
   create_table "messages", force: :cascade do |t|
     t.string "content"
     t.bigint "chatroom_id", null: false
@@ -104,6 +135,11 @@ ActiveRecord::Schema.define(version: 2021_03_09_141557) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+
+  create_table "pdfs", force: :cascade do |t|
+    t.string "show"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "species", force: :cascade do |t|
@@ -132,6 +168,8 @@ ActiveRecord::Schema.define(version: 2021_03_09_141557) do
   add_foreign_key "articles", "clubs"
   add_foreign_key "chatrooms", "clubs"
   add_foreign_key "chatrooms", "users"
+  add_foreign_key "bookmarks", "clubs"
+  add_foreign_key "bookmarks", "users"
   add_foreign_key "club_species", "clubs"
   add_foreign_key "club_species", "species"
   add_foreign_key "clubs", "users"

@@ -1,0 +1,21 @@
+<div class="certificate flexrow">
+  <h1>CERTIFICATE</h1>
+  <div>
+    <%= wicked_pdf_image_tag("logo.png") %> 
+  </div>
+  <div>
+    <p>Charming Creatures hereby certifies that</p>
+    <h2><%= @donation.first_name %> <%= @donation.last_name %></h2>
+    <p>is a true animal hero and donated on <%= @donation.created_at  %> </p>
+    <h2><%= @donation.amount  %> Euro</h2>
+    <p>to our partner</p>
+    <h2><%= @donation.club.name  %></h2>
+    <div class="signature">
+      <%= wicked_pdf_image_tag("signature.png") %> 
+    </div>
+    
+    <div class="sig">
+      <p>CEO, Charming Creatures</p>
+    </div>
+  </div>
+</div>
