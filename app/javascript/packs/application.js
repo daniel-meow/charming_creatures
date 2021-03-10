@@ -34,11 +34,13 @@ import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
-import { initChatBox } from '../plugins/init_chatbox';
+import {initChatBox } from '../plugins/init_chatbox'
+import {initChatroomCable} from "../channels/chatroom_channel"
 import { index } from '../channels/index.js';
 
 document.addEventListener('turbolinks:load', () => {
   initChatBox();
   initMapbox();
+  initChatroomCable();
   index();
 })
