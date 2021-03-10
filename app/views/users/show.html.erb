@@ -28,6 +28,37 @@
   </div>
 </div>
 
+</div>
+
+<div class="container">
+  <div class="banner">
+    <h1 style="text-align: center; margin: 40px 0">Explore your bookmarks!<h1>
+  </div>
+</div>
+<div class="container-main">
+  <div class='container-card'>
+    <% @bookmarks.each do |bookmark| %>
+    <div class="card-index">
+            <div class="card-index-inside">
+              <%= link_to club_path(bookmark.club) do %>
+                <% if bookmark.club.photos.first && bookmark.club.logo.attached? %>
+                  <div class="p-n-l"> <%= cl_image_tag(bookmark.club.photos.first.key, :class => "image") + cl_image_tag(bookmark.club.logo.key, :class => "logo") %></div>
+                <% else %>
+                  <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
+                <% end %>
+                <div class="name"> <%= bookmark.club.name %> <i class="fas fa-heart"></i></div>
+                <div class="l-n-b">
+                  <div class="location"><i class="fas fa-map-marker-alt"></i> <%= bookmark.club.address %></div>
+                </div>
+                  <div class="category"><strong><%= bookmark.club.category %></strong></div>
+                <div class="d1"> <%= truncate(bookmark.club.description, length: 50) %></div>
+              <% end %>
+            </div>
+          </div>
+    <% end %>
+  </div>
+ </div>
+
 <div class="container clubs-own">
   <% if @clubs  %>
     <h2>Your Clubs</h2>
