@@ -106,3 +106,14 @@
   color: #f1f1f1;
   border: 2px solid white;
 }
+
+.btn-clean {
+  background-color: white;
+  border: 0px solid white;
+  padding: 0;
+ 
+  .fa-heart {
+    padding: 0;
+  }
+}
+

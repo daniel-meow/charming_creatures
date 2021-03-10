@@ -5,8 +5,11 @@ class ClubsController < ApplicationController
     find_club
     @short = @club.description.truncate(250);
     @articles = Article.where(club_id: @club.id);
-
     @markers = [{lat: @club.latitude, lng: @club.longitude}]
+
+    @chatroom = Chatroom.find_or_create_by( user: current_user, club: @club)
+    @message = Message.new
+
     @bookmark = Bookmark.new
     @club.bookmarks = Bookmark.where(club_id: @club.id)
     @user = current_user
@@ -22,7 +25,6 @@ class ClubsController < ApplicationController
         end
       end
     end
-
   end
 
   def index

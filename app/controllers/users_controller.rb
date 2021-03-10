@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @bookmarks = Bookmark.where(user_id: current_user.id)
     @user = current_user
 
     if @user.goal
