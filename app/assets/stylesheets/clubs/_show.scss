@@ -21,13 +21,24 @@
   &.tw {
     color: #1D9CEA;
   }
-
 }
 
 .social {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.bookmark {
+  display: inline;
+  .fa-heart {
+    padding: 0;
+  }
+}
+
+.form-clean {
+  background-color: red;
+  display:inline
 }
 
 .sm-box {
