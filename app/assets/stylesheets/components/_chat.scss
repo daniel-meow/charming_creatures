@@ -1,0 +1,124 @@
+.chat-widget-wrapper {
+  display: block;
+  width: 300px;
+  height: 62px;
+  position: fixed;
+  bottom: 30px;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2000;
+  animation: all 2s linear;
+}
+
+.chat-widget-container {
+  position: relative;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  
+  &.open {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  .chat-widget-text {
+    p {
+      margin: 0 auto;
+      color: #808080;
+      
+      &.heading {
+        color: #00aeef;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.chat-widget-avatar {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: -11px;
+  right: 30px;
+  border: 4px solid #f1f1f1;
+  border-radius: 50%;
+}
+
+.chat-box-container {
+  position: absolute;
+  width: 300px;
+  height: 0;
+  background-color: #f1f1f1;
+  bottom: 10px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  -webkit-transition: all 0.2s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -ms-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  
+  &.show {
+    bottom : 72px;
+    height : 300px;
+  }
+  
+  .chat-box-nav {
+    background-color: #00aeef;
+    width: 100%;
+    height: 40px;
+  }
+}
+
+.msg{
+  position: relative;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #A8DDFD;
+  width: 200px;
+  text-align: left;
+  font: 400 .9em 'Open Sans', sans-serif;
+  border: 1px solid #97C6E3;
+  border-radius: 10px;
+  word-wrap: break-word;
+}
+
+.msg.orange{
+  position: relative;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f8e896;
+  width: 200px;
+  text-align: left;
+  font: 400 .9em 'Open Sans', sans-serif;
+  border: 1px solid #f8e896;
+  border-radius: 10px;
+  word-wrap: break-word;
+}
+
+.messages{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.message-container.sender {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.message-container.reciever {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.chat-box-content {
+  flex-grow: 1;
+  overflow-y: scroll;
+}
