@@ -1,6 +1,6 @@
 <% content_for :meta_title, "#{@club.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @club.description %>
-<% content_for :meta_image, cl_image_path(@club.photo.path) %>
+<% content_for :meta_image, cl_image_path(@club.photos.first.key) %>
 
 <div class="club-header-image">
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
