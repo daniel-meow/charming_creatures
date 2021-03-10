@@ -24,6 +24,12 @@
 
 }
 
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .sm-box {
   display: inline-flex;
   border-radius: .5em;
