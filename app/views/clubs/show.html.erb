@@ -19,7 +19,7 @@
         <%= cl_image_tag @club.logo.key, class: "club-avatar" %>
       <% else %>
         <%= image_tag ("Dogpaw.png"), class: "club-avatar" %>
-      <% end %> 
+      <% end %>
     </div>
   </div>
 </div>
@@ -45,16 +45,16 @@
        <%= render "bookmarks/newbookmark" %>
       <% end %>
 
-      
+
     </div>
     <div class="col-sm-12 col-lg-6 d-flex justify-content-end">
       <div class="donation-club-box d-flex flex-column justify-content-between">
         <h2>Support us now!</h2>
         <p> <%= @short  %></p>
-        
+
         <!-- New Button Class and style Start // Leo -->
-        <div class="button-donate">        
-          <%= link_to "Donate Now", new_club_donation_path(@club), class:"button-center" %> 
+        <div class="button-donate">
+          <%= link_to "Donate Now", new_club_donation_path(@club), class:"button-center" %>
         </div>
         <!-- New Button Class and style End -->
       </div>
@@ -90,7 +90,7 @@
       <% end %>
         <div class="update-content">
           <h3><%= article.title  %></h3>
-          <p>posted by: <%= article.club.name  %> on <%= article.created_at  %></p>
+          <p>posted by: <%= article.club.name  %> on <%= article.created_at.strftime("%b. %Y")  %></p>
           <p><%= article.description%></p>
           <!-- New Button Class and style Start // Leo -->
           <div class="art-btn">
@@ -131,7 +131,7 @@
 
         <div>
           <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-            <div class="input-group mb-3">     
+            <div class="input-group mb-3">
               <%= f.input :content, label: false, placeholder: "send a message", input_html: { class: "chat-msg" }, wrapper_html: {class: 'm-0'}  %>
               <div class="input-group-append">
                 <%= f.submit  "send", class: "btn btn-outline-secondary"%>
