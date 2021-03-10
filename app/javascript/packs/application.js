@@ -39,7 +39,9 @@ document.addEventListener('turbolinks:load', () => {
 import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
+import {initChatBox } from '../plugins/init_chatbox'
 
 document.addEventListener('turbolinks:load', () => {
+  initChatBox();
   initMapbox();
 })
