@@ -40,8 +40,10 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
 import {initChatBox } from '../plugins/init_chatbox'
+import {initChatroomCable} from "../channels/chatroom_channel"
 
 document.addEventListener('turbolinks:load', () => {
   initChatBox();
   initMapbox();
+  initChatroomCable();
 })
