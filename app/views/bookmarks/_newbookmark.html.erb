@@ -1,3 +1,5 @@
-<%= simple_form_for [@club, @bookmark] do |f| %>
-  <%= f.button :submit, "Bookmark", class: 'button' %>
+<%= simple_form_for [@club, @bookmark], html: {class:"form-clean"} do |f| %>
+  <%= button_tag(type: "submit", class:"btn-clean")  do  %>
+    <i class="far fa-heart"></i>
+  <% end %>
 <% end %>
