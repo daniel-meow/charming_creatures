@@ -87,8 +87,9 @@
                   <% end %>
                     <div class="update-content">
                       <h3><%= article.title  %></h3>
-                      <p>posted by: <%= article.club.name  %> on <%= article.created_at  %></p>
-                      <p><%= article.description%></p>
+                      <div class="name"><%= article.club.name  %></div>
+                      <div class="d1">from: <%= article.created_at.strftime("%b. %Y")  %></div>
+                      <div class="d1"><%= article.description%></div>
                   </div>
                 </div>
             </div>
