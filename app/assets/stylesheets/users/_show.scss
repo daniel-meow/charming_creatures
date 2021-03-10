@@ -1,21 +1,87 @@
-.donation-bar{
-position: relative;
+.header-profile {
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+  position: sticky;
+}
+
+.button1 {
+  height: 60px;
+  width: 100px;
+  background-color: #eb6383;
+  color: #f1f1f1;
+  border-radius: 25px 25px 25px 25px;
+  border: 2px solid #eb6383;
+  transition: all 0.3s;
+  justify-content: center;
+}
+
+.button1:hover {
+  background-color: #fa9191;
+  color: #f1f1f1;
+  border: 2px solid white;
+}
+
+.sw {
+  padding-left:42%;
+  width: 200px !important;
+}
+.dg-banner  {
+  padding-top: 30px;
+  .g-n-b {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 200px 50px;
+  padding-bottom: 5px;
+
+    .g {
+    }
+    .bu {
+      position: relative;
+      left: -25px;
+    }
+  }
+}
+/* Everything around the progression bar */
+.donation-bar {
+  display: grid;
+  width: 1100px;
+  position: relative;
+}
+
+#user-goal{
+  z-index: 10;
+  color: #fa9191;
+  margin-left: 87%;
+  justify-content: center;
+  padding-top: 14px;
 }
 
 .donation-goal {
   width: 100%;
-  height: 80px;
-  background-color: red;
+  height: 50px;
+  background-color: white;
   position: absolute;
-  text-: white;
-  text-align: right center;
+  background-color: white;
+  border-radius: 20px 20px 20px 20px;
+  border: 2px solid #eb6383;
+  // padding: 20px;
+  // padding-right: 35px;
+  outline: none;
 
 }
 
 .donation-progress {
-  height: 80px;
-  background-color: green;
+  height: 50px;
+  background-color: #eb6383;
   position: absolute;
+  border-radius: 20px 20px 20px 20px;
+  border: 2px solid #eb6383;
+  padding: 20px;
+  padding-right: 20px;
+  outline: none;
+  color: white;
+  padding-top: 12px;
 }
 
 .update-buttons {

@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     if @user.goal
       @donations = @user.donations.map {|donation| donation.amount_cents}.sum / 100
       @donation_percentage = @donations/@user.goal * 100
+      @donation_percentage_clean = @donation_percentage.to_i
     end
   end
 

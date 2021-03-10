@@ -1,32 +1,45 @@
-<h1>Hello <%= @user.first_name%> <%= @user.last_name %></h1>
-<div class="header-index">Choose your donation goal current <%= @user.goal %> <div>
-    <%= form_with url: profile_path, method: :post do |f| %>
-      <%= f.number_field :goal, label: "What Is Your Donation Goal", class: "form-control" %>
-      <%= f.submit %>
-    <% end %>
-  </div>
-  <div class="donation-bar">
-    <div class="donation-goal" >
-      <%= @user.goal %>
+<div class="container">
+  <div class="banner">
+    <h1 class="header-profile">Hello <%= @user.first_name%> <%= @user.last_name %></h1>
+    <div class="header-profile"><!-- Trigger/Open The Modal -->
+      <button id="myBtn1" class="button">Edit Profile</button>
+         <!-- The Modal -->
+        <div class="container-main-u">
+          <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content1">
+              <span class="close">&times;</span>
+              <%= render "devise/registrations/form"  %>
+            </div>
+          </div>
+        </div>
+    </div><!-- Trigger/Close The Modal -->
+    <p style="text-align: center">Your personal donation progressbar</p>
+    <p style="text-align: center">You are at <strong> <%= @donation_percentage_clean.to_s + '%' %></strong> towards your goal!</p>
+    <div class="donation-bar">
+      <div class="donation-goal" ></div>
+      <div class="donation-progress" style= "width: <%= @donation_percentage.to_s + '%' %>"> Your Donations: €<%= @donations.to_s %></div>
+      <div id="user-goal"> Your Goal: €<%= @user.goal.to_i%></div>
     </div>
-    <div class="donation-progress" style= "width: <%= @donation_percentage.to_s + '%' %>"></div> <%= @donation_percentage.to_s + '%' %>">
+    <div class="dg-banner">
+      <%= form_with url: profile_path, method: :post do |f| %>
+        <div class="g-n-b">
+          <div class="g">
+            <%= f.number_field :goal, placeholder: "€0", class: "searchbar sw" %>
+          </div>
+          <div class="bu">
+            <%= f.submit 'Submit', :class => "button1" %>
+          </div>
+        </div>
+      <% end %>
+      <p style="text-align: center">You can set a convenient donation goal, it will help you to keep track of the amount you wish to donate</p>
+    </div>
   </div>
 </div>
+
 <div>
 </div>
-<div><!-- Trigger/Open The Modal -->
-<button id="myBtn1" class="button-donate">Edit Profile</button>
 
-<!-- The Modal -->
-<div class="container-main-u">
-  <div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content1">
-      <span class="close">&times;</span>
-      <%= render "devise/registrations/form"  %>
-    </div>
-  </div>
-</div>
 
 </div>
 
