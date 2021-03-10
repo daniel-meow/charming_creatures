@@ -73,6 +73,29 @@
 </div>
 <div id="home-look">
   <h2>Awesome achievements</h2>
+  <div class="container-main">
+    <div class='container-card'>
+        <% 3.times do |article| %>
+        <% article = @articles.sample %>
+          <%= link_to club_path(article.club) do %>
+            <div class="card-index">
+                <div class="card-index-inside">
+                  <% if article.photo.attached? %>
+                    <div class="update-img"><%= cl_image_tag article.photo.key%></div>
+                  <% else %>
+                    <div class="update-img"></div>
+                  <% end %>
+                    <div class="update-content">
+                      <h3><%= article.title  %></h3>
+                      <p>posted by: <%= article.club.name  %> on <%= article.created_at  %></p>
+                      <p><%= article.description%></p>
+                  </div>
+                </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
 </div>
 
 

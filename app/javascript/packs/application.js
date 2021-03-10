@@ -28,11 +28,6 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-});
-
 
 // Mapbox
 // CSS
@@ -41,9 +36,11 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
 import {initChatBox } from '../plugins/init_chatbox'
 import {initChatroomCable} from "../channels/chatroom_channel"
+import { index } from '../channels/index.js';
 
 document.addEventListener('turbolinks:load', () => {
   initChatBox();
   initMapbox();
   initChatroomCable();
+  index();
 })
