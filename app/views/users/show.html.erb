@@ -21,26 +21,14 @@
           </div>
         </div>
       <% end %>
-      <p style="text-align: center">You can set a convenient donation goal, it will help you to keep track of the amount you wish to donate.</p>
+      <p style="text-align: center" class="p">Set your own donation goal. </br> A easy and convenient way to make sure you never forget to donate to your personal favorit Animal Support Group.</br> Setting a goal can help you to keep track of the amount you wish to donate.</br> Choose your personal goal here and keep track of your progress each time you donate! </br> Thank you for your support and happy donating!</p>
     </div>
   </div>
 </div>
-<div class="header-profile"><!-- Trigger/Open The Modal -->
-  <button id="myBtn1" class="button-edit">Edit Profile</button>
-     <!-- The Modal -->
-    <div class="container-main-u">
-      <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content1">
-          <span class="close">&times;</span>
-          <%= render "devise/registrations/form"  %>
-        </div>
-      </div>
-    </div>
-</div><!-- Trigger/Close The Modal -->
+<div class="white"></div>
 <div class="container">
   <div class="banner">
-    <h1 style="text-align: center; margin: 40px 0">Explore your bookmarks!<h1>
+    <h1 style="text-align: center; margin: 40px 0">See all your favorit Animal Support Groups here!<h1>
   </div>
 </div>
 <div class="container-main">
@@ -66,7 +54,20 @@
     <% end %>
   </div>
 </div>
-
+<div class="header-profile"><!-- Trigger/Open The Modal -->
+  <button id="myBtn1" class="button-edit">Change Your Personal Details</button>
+     <!-- The Modal -->
+    <div class="container-main-u">
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content1">
+          <span class="close">&times;</span>
+          <%= render "devise/registrations/form"  %>
+        </div>
+      </div>
+    </div>
+</div><!-- Trigger/Close The Modal -->
+<div style="height: 85px"></div>
 <div class="container clubs-own">
   <% if @clubs  %>
     <h2>Your Clubs</h2>
