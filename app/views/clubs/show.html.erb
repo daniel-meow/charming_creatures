@@ -84,7 +84,7 @@
   <div id="club-updates">
     <h2>Latest Updates</h2>
     <% if current_user == @club.user %>
-    <%= link_to "Add Article", new_club_article_path(@club), class: 'add-btn' %>
+    <%= link_to "Write an Article", new_club_article_path(@club), class: 'add-btn' %>
     <% end  %>
     <% @articles.each do |article| %>
       <div class="update-box">
