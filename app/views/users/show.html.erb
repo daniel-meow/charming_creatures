@@ -70,7 +70,8 @@
 </div><!-- Trigger/Close The Modal -->
 <div style="height: 85px"></div>
 <div class="container clubs-own">
-  <% if @clubs  %>
+
+  <% if @clubs.empty? == false  %>
     <h2>Your Clubs</h2>
     <% @clubs.each do |club| %>
       <div class="card-index club-index update-clubs">
