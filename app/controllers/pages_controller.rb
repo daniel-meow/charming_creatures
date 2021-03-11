@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @clubs = Club.all
+    @articles = Article.all
   end
 end

@@ -8,7 +8,7 @@
 
 .modal {
   // display: none !important; /* Hidden by default */
-  z-index: 1 !important; /* Sit on top */
+  z-index: 100 !important; /* Sit on top */
   // width: 80% !important; /* Full width */
   // height: 80% !important; /* Full height */
   // overflow: auto !important; /* Enable scroll if needed */
@@ -25,6 +25,7 @@
   z-index: 1;
   // padding: 20px;
   overflow: auto !important;
+  z-index: 1000
 }
 
 /* The Close Button */

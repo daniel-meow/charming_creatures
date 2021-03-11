@@ -19,7 +19,7 @@
         <%= cl_image_tag @club.logo.key, class: "club-avatar" %>
       <% else %>
         <%= image_tag ("Dogpaw.png"), class: "club-avatar" %>
-      <% end %> 
+      <% end %>
     </div>
   </div>
 </div>
@@ -56,10 +56,10 @@
       <div class="donation-club-box d-flex flex-column justify-content-between">
         <h2>Support us now!</h2>
         <p> <%= @short  %></p>
-        
+
         <!-- New Button Class and style Start // Leo -->
-        <div class="button-donate">        
-          <%= link_to "Donate Now", new_club_donation_path(@club), class:"button-center" %> 
+        <div class="button-donate">
+          <%= link_to "Donate Now", new_club_donation_path(@club), class:"button-center" %>
         </div>
         <!-- New Button Class and style End -->
       </div>
@@ -84,7 +84,7 @@
   <div id="club-updates">
     <h2>Latest Updates</h2>
     <% if current_user == @club.user %>
-    <%= link_to "Create an Article", new_club_article_path(@club), class: 'add-btn' %>
+    <%= link_to "Add Article", new_club_article_path(@club), class: 'add-btn' %>
     <% end  %>
     <% @articles.each do |article| %>
       <div class="update-box">
@@ -95,7 +95,7 @@
       <% end %>
         <div class="update-content">
           <h3><%= article.title  %></h3>
-          <p>posted by: <%= article.club.name  %> on <%= article.created_at  %></p>
+          <p>posted by: <%= article.club.name  %> on <%= article.created_at.strftime("%b. %Y")  %></p>
           <p><%= article.description%></p>
           <!-- New Button Class and style Start // Leo -->
           <div class="art-btn">
@@ -112,47 +112,38 @@
 </div>
 
 <% if user_signed_in? %>
-   
-<% end %>
-
-<div class="chat-widget-wrapper">
-  <div class="chat-widget-container open">
-    <div class="chat-widget-text">
-      <p class="heading">LIVE CHAT</p>
-      <p>How can we help?</p>
-    </div>
-    <div class="chat-widget-avatar">
-      <img src="http://image.flaticon.com/icons/svg/236/236831.svg" alt="" />
-    </div>
-  </div>
-  <div class="chat-box-container show">
-    <div class="chat-box-nav">
-    </div>
-
-    <div class="chat-box-content">
-      <div id="messages" class="messages" data-chatroom-id="<%= @chatroom.id %>">
-        <% @chatroom.messages.each do |message| %>
-          <div class="message-container <%= message.user == current_user ? "sender" : "reciever" %>" id="message-<%= message.id %>">
-          <div class="msg <%= message.user == current_user ? "" : "orange" %>">
-            <i class="author">
-              <span><strong><%= message.user.first_name %></strong></span>
-            </i>
-            <p><%= message.content %></p>
-          </div>
-          </div>
-        <% end %>
+  <div class="chat-widget-wrapper">
+    <div class="chat-widget-container open">
+      <div class="chat-widget-text">
+        <p class="heading">LIVE CHAT</p>
+        <p>How can we help?</p>
+      </div>
+      <div class="chat-widget-avatar">
+        <img src="http://image.flaticon.com/icons/svg/236/236831.svg" alt="" />
       </div>
     </div>
+    <div class="chat-box-container show">
+      <div class="chat-box-nav">
+      </div>
 
-      <div>
-        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-          <div class="input-group mb-3">     
-            <%= f.input :content, label: false, placeholder: "send a message", input_html: { class: "chat-msg" }, wrapper_html: {class: 'm-0'}  %>
-            <div class="input-group-append">
-              <%= f.submit  "send", class: "btn btn-outline-secondary"%>
+      <div class="chat-box-content">
+        <div id="messages" class="messages" data-chatroom-id="<%= @chatroom.id %>" data-current-user-id="<%= current_user.id %>">
+          <% @messages.each do |message| %>
+            <%= render "messages/message", message: message %>
+          <% end %>
+        </div>
+        </div>
+
+        <div>
+          <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+            <div class="input-group mb-3">
+              <%= f.input :content, label: false, placeholder: "send a message", input_html: { class: "chat-msg" }, wrapper_html: {class: 'm-0'}  %>
+              <div class="input-group-append">
+                <%= f.submit  "send", class: "btn btn-outline-secondary"%>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
   </div>
-</div>
+<% end %>
