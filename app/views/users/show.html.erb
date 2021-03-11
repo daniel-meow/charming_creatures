@@ -3,7 +3,7 @@
     <h1 class="header-profile">Hello <%= @user.first_name%> <%= @user.last_name %></h1>
     <div>
       <h3 style="text-align: center" padding-bottom="10px">Your personal donation progressbar</h3>
-      <p style="text-align: center">You already reached <strong> <%= @donation_percentage_clean.to_s + '%' %></strong> of your total goal!</p>
+      <p style="text-align: center">You already reached <span class="clr-main" style="font-size: 25px"><strong> <%= @donation_percentage_clean.to_s + '%' %></strong></span> of your total goal!</p>
     </div>
     <div class="donation-bar">
       <div class="donation-goal" ></div>
