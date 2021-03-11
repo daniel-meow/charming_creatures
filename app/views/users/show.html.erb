@@ -10,6 +10,9 @@
       <div class="donation-progress" style= "width: <%= @donation_percentage.to_s + '%' %>"> Your Donations: €<%= @donations.to_s %></div>
       <div id="user-goal"> Your Goal: €<%= @user.goal.to_i%></div>
     </div>
+    <div class="text-banner">
+      <p style="text-align: center" class="p">Set your own donation goal. </p>
+    </div>
     <div class="dg-banner">
       <%= form_with url: profile_path, method: :post do |f| %>
         <div class="g-n-b">
@@ -21,7 +24,7 @@
           </div>
         </div>
       <% end %>
-      <p style="text-align: center" class="p">Set your own donation goal. </br> A easy and convenient way to make sure you never forget to donate to your personal favorit animal welfare organizations.</br> Setting a goal can help you to keep track of the amount you wish to donate.</br> Choose your personal goal here and keep track of your progress each time you donate! </br> Thank you for your support and happy donating!</p>
+      <p style="text-align: center" class="p">A easy and convenient way to make sure you never forget to donate to your personal favorit animal welfare organizations.</br> Setting a goal can help you to keep track of the amount you wish to donate.</br> Choose your personal goal here and keep track of your progress each time you donate! </br> Thank you for your support and happy donating!</p>
     </div>
   </div>
 </div>
