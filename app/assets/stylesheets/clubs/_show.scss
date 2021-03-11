@@ -26,11 +26,13 @@
 .social {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .bookmark {
   display: inline;
+  padding-left: 20px;
+  margin-left: 20px;
+  border-left: 1px solid black;
   .fa-heart {
     padding: 0;
   }
