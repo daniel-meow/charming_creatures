@@ -5,7 +5,7 @@ class DonationsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "Your_filename",
+        render pdf: "Your_Certificate",
         template: "donations/certificate.html.erb",
         layout: 'pdf.html',
         page_size: "A4",
