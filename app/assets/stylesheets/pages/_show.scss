@@ -4,3 +4,16 @@
   display: grid;
   justify-content: center;
 }
+
+.cm {
+    width: 800px;
+    margin: 0 auto;
+}
+.grid-2x2 {
+  grid-template-columns: 1fr 1fr !important;
+  // grid-template-columns: minmax(400px, 1fr 1fr) !important;
+}
+
+.card-d {
+
+}
