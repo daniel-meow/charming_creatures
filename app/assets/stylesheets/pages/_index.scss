@@ -10,10 +10,13 @@
 }
 
 .header-index {
+  margin-top: 105px;
+  margin-bottom: 40px;
   display: grid;
   justify-content: center;
   padding-bottom: 20px;
   text-align: center;
+  font-weight: 900 !important;
 }
 
 // Searchbar aNd Button
@@ -21,7 +24,7 @@
   display: grid;
   justify-content: center;
   grid-template-columns: 400px 200px;
-  padding-bottom: 40px;
+  padding-bottom: 70px;
 
   .s {
   }
