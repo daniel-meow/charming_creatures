@@ -42,11 +42,11 @@
                 <% else %>
                   <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
                 <% end %>
-                <div class="name"> <%= bookmark.club.name %> <i class="fas fa-heart"></i></div>
+                <div class="name"> <%= bookmark.club.name.titlecase %> <i class="fas fa-heart"></i></div>
                 <div class="l-n-b">
-                  <div class="location"><i class="fas fa-map-marker-alt"></i> <%= bookmark.club.address %></div>
+                  <div class="location"><i class="fas fa-map-marker-alt"></i> <%= bookmark.club.address.titlecase %></div>
                 </div>
-                  <div class="category"><strong><%= bookmark.club.category %></strong></div>
+                  <div class="category"><strong><%= bookmark.club.category.titlecase %></strong></div>
                 <div class="d1"> <%= truncate(bookmark.club.description, length: 50) %></div>
               <% end %>
             </div>
@@ -78,7 +78,7 @@
           <% else %>
             <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
           <% end %>
-          <h3> <%= link_to club.name, club_path(club)  %></h3>
+          <h3> <%= link_to club.name.titlecase, club_path(club)  %></h3>
           <div class="update-buttons">
             <%= link_to "edit club", edit_club_path(club), class:"read-btn"  %>
             <%= link_to "delete club",club_path(club), class:"add-btn", method: :delete, data: { confirm: "Are you sure?" }  %>
