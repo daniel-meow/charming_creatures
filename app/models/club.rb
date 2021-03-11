@@ -2,9 +2,9 @@ class Club < ApplicationRecord
   has_one_attached :logo
   has_many_attached :photos
   has_many :club_species
-  has_many :donations
+  has_many :donations, dependent: :destroy
   has_many :articles, dependent: :destroy
-  has_many :chatrooms
+  has_many :chatrooms, dependent: :destroy
   belongs_to :user
   has_many :bookmarks
 
