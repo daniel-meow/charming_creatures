@@ -57,10 +57,12 @@
               <% else %>
                 <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
               <% end %>
-              <div class="name"> <%= club.name.titlecase %></div>
+              <div class="name"> <%= club.name.titlecase %>
+                <div class="bookmark"><i class="far fa-heart"></i>
+               </div>
+              </div>  
               <div class="l-n-b">
                 <div class="location"><i class="fas fa-map-marker-alt"></i> <%= truncate(club.address.titlecase, length: 40, separator: ' ', omission: ' ') %></div>
-                <div class="bookmark"><strong>Bookmarks</strong></div>
               </div>
                 <div class="category"><strong><%= club.category.titlecase %></strong></div>
               <div class="d1"> <%= truncate(club.description, length: 100, separator: ' ') %></div>
