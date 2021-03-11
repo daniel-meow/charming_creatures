@@ -29,23 +29,28 @@
     <div class="col-sm-12 col-lg-6 club-name">
       <h1 class="clubavatar-margin-top"><%= @club.name %></h1>
       <p><%= @club.address  %></p>
-      <div class="sm-box">
-        <i class="fab fa-instagram sm-icon ig"></i>
+      <div class="social">
+        <div class="sm-boxes">
+          <div class="sm-box">
+            <i class="fab fa-instagram sm-icon ig"></i>
+          </div>
+          <div class="sm-box">
+            <i class="fab fa-facebook-square sm-icon fb"></i>
+          </div>
+          <div class="sm-box">
+            <i class="fab fa-twitter-square sm-icon tw"></i>
+          </div>
+        </div>
+        <div class="bookmark">
+          <% if @isbookmarked  %>
+            <%= link_to club_bookmark_path(@club), method: :delete do %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+          <% else %>
+            <%= render "bookmarks/newbookmark" %>
+          <% end %>
+        </div>
       </div>
-      <div class="sm-box">
-        <i class="fab fa-facebook-square sm-icon fb"></i>
-      </div>
-      <div class="sm-box">
-        <i class="fab fa-twitter-square sm-icon tw"></i>
-      </div>
-      <%= @isbookmarked ? "BOOKMARKED!" : "NOT BOOKMARKED" %>
-      <% if @isbookmarked  %>
-        <%= link_to "Delete Bookmark", club_bookmark_path(@club), method: :delete, class:"button"  %>
-      <% else %>
-       <%= render "bookmarks/newbookmark" %>
-      <% end %>
-
-
     </div>
     <div class="col-sm-12 col-lg-6 d-flex justify-content-end">
       <div class="donation-club-box d-flex flex-column justify-content-between">
@@ -79,7 +84,7 @@
   <div id="club-updates">
     <h2>Latest Updates</h2>
     <% if current_user == @club.user %>
-    <%= link_to "Create an Article", new_club_article_path(@club), class: 'add-btn' %>
+    <%= link_to "Add Article", new_club_article_path(@club), class: 'add-btn' %>
     <% end  %>
     <% @articles.each do |article| %>
       <div class="update-box">
