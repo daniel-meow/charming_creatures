@@ -2,16 +2,23 @@
 <% content_for :meta_description, @club.description %>
   <% if @club.photos.attached? %>
   <% content_for :meta_image, cl_image_path(@club.photos.first.key) %>
-<% end %>
-<div class="club-header-image">
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <% @club.photos.each_with_index do |photo, index| %>
-        <div class="carousel-item <%= index == 0 ? "active" : "" %>">
-          <%= cl_image_tag photo.key %>
-        </div>
-      <% end %>
+
+<div>
+  <div class="club-header-image">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <% @club.photos.each_with_index do |photo, index| %>
+          <div class="carousel-item <%= index == 0 ? "active" : "" %>">
+            <%= cl_image_tag photo.key %>
+          </div>
+        <% end %>
+      </div>
     </div>
+    <% else %>
+      <div class="club-header-image">
+        <%= image_tag('example_dog.jpg') %>
+      </div>
+    <% end %>
   </div>
   <div class="container main-discription">
     <div class="d-flex align-items-end avatar-container">
