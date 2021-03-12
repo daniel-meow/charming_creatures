@@ -141,13 +141,13 @@
 }
 
 .form-control1 {
-  border-radius: 8px 0px 0px 8px;
-  border: 1px solid #eb6383;
-  padding-right: 23px;
+  border-radius: 8px 0px 0px 8px !important;
+  border: 1px solid #eb6383 !important;
+  padding-right: 23px !important;
 
 }
 
-.button {
+.button-chat {
     height: 38px !important;
     width: 80px !important;
     border-radius: 15px 15px 15px 15px !important;
