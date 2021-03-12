@@ -130,27 +130,24 @@
       </div>
     </div>
     <div class="chat-box-container show">
-      <div class="chat-box-nav">
-      </div>
-
+      <div class="chat-box-nav"></div>
       <div class="chat-box-content">
         <div id="messages" class="messages" data-chatroom-id="<%= @chatroom.id %>" data-current-user-id="<%= current_user.id %>">
           <% @messages.each do |message| %>
             <%= render "messages/message", message: message %>
           <% end %>
         </div>
-        </div>
-
-        <div>
-          <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-            <div class="input-group mb-3">
-              <%= f.input :content, label: false, placeholder: "send a message", input_html: { class: "chat-msg" }, wrapper_html: {class: 'm-0'}  %>
-              <div class="input-group-append">
-                <%= f.submit  "send", class: "btn btn-outline-secondary"%>
-              </div>
-            </div>
-          <% end %>
-        </div>
       </div>
+      <div>
+        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+          <div class="input-group mb-3">
+            <%= f.input :content, label: false, placeholder: "Send a message", input_html: { class: "chat-msg" }, wrapper_html: {class: 'm-0'}  %>
+            <div class="input-group-append">
+              <%= f.submit  "Send", class: "button button-chat"%>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 <% end %>
