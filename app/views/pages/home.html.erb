@@ -88,9 +88,8 @@
                     <div class="p-n-l"><%= image_tag('example_bear.jpg', :class => "image")%></div>
                   <% end %>
                     <div class="update-content">
-                      <h3><%= article.title  %></h3>
-                      <div class="name"><%= article.club.name.titlecase  %></div>
-                      <div class="d1">from: <strong> <%= article.created_at.strftime("%b. %Y")%></strong></div>
+                      <div class="name"><%= article.title %></div>
+                      <div class="d1 posted"><strong>posted by <span class="clr-main"><%= article.club.name.titlecase  %></span> on <%= article.created_at.strftime("%b. %Y")%></strong></div>
                       <div class="d1"><%= article.description%></div>
                   </div>
                 </div>
