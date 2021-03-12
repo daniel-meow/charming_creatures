@@ -52,8 +52,8 @@
         <div class="card-index">
           <div class="card-index-inside">
             <%= link_to club_path(club) do %>
-              <% if club.photos.first %>
-                <div class="p-n-l"><%= cl_image_tag(club.photos.first.key, :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
+              <% if club.photos.first && club.logo.attached?%>
+                <div class="p-n-l"><%= cl_image_tag(club.photos.first.key, :class => "image") + cl_image_tag(club.logo.key, :class => "logo") %></div>
               <% else %>
                 <div class="p-n-l"><%= image_tag('example_dog.jpg', :class => "image") + image_tag('example_logo.jpg', :class => "logo") %></div>
               <% end %>
