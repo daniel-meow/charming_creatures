@@ -93,7 +93,8 @@
     <% if current_user == @club.user %>
     <%= link_to "Write an Article", new_club_article_path(@club), class: 'add-btn' %>
     <% end  %>
-    <% @articles.each do |article| %>
+
+      <% @articles.each do |article| %>
       <div class="update-box">
         <div class="update-box-2">
           <% if article.photo.attached? %>
@@ -112,15 +113,15 @@
             <div class="art-btn">
               <button class="read-btn" type="button">Read more</button>
               <% if current_user == @club.user %>
-            </div>
               <% end %>
+              </div>
           </div>
             <!-- New Button Class and style End // Leo -->
       </div>
-    <% end %>
+      <% end %>
   </div>
 </div>
-
+<!-- Chatbot -->
 <% if user_signed_in? %>
   <div class="chat-widget-wrapper">
     <div class="chat-widget-container open">
