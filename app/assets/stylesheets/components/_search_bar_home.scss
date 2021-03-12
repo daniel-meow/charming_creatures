@@ -19,8 +19,8 @@ form.search_input input{
 }
 
 .sb:hover > form.search_input input{
-  padding: 0 10px;
-  width: 450px;
+  // padding: 0 10px;
+  width: 300px;
   caret-color:red;
   transition: width 0.4s linear;
 }
