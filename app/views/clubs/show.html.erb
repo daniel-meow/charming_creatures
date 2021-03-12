@@ -95,24 +95,27 @@
     <% end  %>
     <% @articles.each do |article| %>
       <div class="update-box">
-      <% if article.photo.attached? %>
-        <div class="update-img"><%= cl_image_tag article.photo.key, width: 200, height: 200, crop: :fill%></div>
-      <% else %>
-        <div class="update-img"></div>
-      <% end %>
-        <div class="update-content">
-          <h3><%= article.title  %></h3>
-          <p>posted by: <%= article.club.name  %> on <%= article.created_at.strftime("%b. %Y")  %></p>
-          <p><%= article.description%></p>
-          <!-- New Button Class and style Start // Leo -->
-          <div class="art-btn">
-            <button class="read-btn" type="button">Read more</button>
-            <% if current_user == @club.user %>
+        <div class="update-box-2">
+          <% if article.photo.attached? %>
+            <div class="update-img"><%= cl_image_tag article.photo.key, width: 200, height: 200, crop: :fill%></div>
+          <% else %>
+            <div class="update-img"></div>
+          <% end %>
+            <div class="update-content">
+              <h3><%= article.title  %></h3>
+              <p>posted by: <%= article.club.name  %> on <%= article.created_at.strftime("%b. %Y")  %></p>
+              <p><%= article.description%></p>
             </div>
-            <% end %>
-          </div>
-          <!-- New Button Class and style End // Leo -->
         </div>
+          <div class="update-button">
+            <!-- New Button Class and style Start // Leo -->
+            <div class="art-btn">
+              <button class="read-btn" type="button">Read more</button>
+              <% if current_user == @club.user %>
+            </div>
+              <% end %>
+          </div>
+            <!-- New Button Class and style End // Leo -->
       </div>
     <% end %>
   </div>

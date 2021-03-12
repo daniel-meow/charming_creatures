@@ -95,13 +95,19 @@
 }
 
 .update-box {
-  display: flex;
+  display: grid;
   align-items: center;
   border: 1px solid $dark-gray;
   box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
   border-radius: 1em;
   padding: 2em;
   margin: 1em 0em;
+}
+
+.update-box-2 {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 200px 1fr;
 }
 
 .update-img {
@@ -112,6 +118,11 @@
 
 .update-content {
   padding-left: 1em;
+  padding-top: 0.3em;
+}
+
+.update-button {
+  margin-right: 10px;
 }
 
 .main-discription {
